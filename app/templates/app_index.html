@@ -1,0 +1,29 @@
+<!-- grandpybot/templates/index.html -->
+
+{% extends 'base.html' %}
+{% block main %}
+<main>
+  <div id="main-box">
+
+    <div id="dialog-box">
+      <div class="exchange">
+        <p class="question">Question 1</p>
+        <p class="answer">Answer 1</p>
+      </div>
+      <div class="exchange">
+        <p class="question">Question 2</p>
+        <p class="answer">Answer 2</p>
+      </div>
+    </div>
+
+    <div id="input-box">
+      <form method="post" action="handler.py">
+        <p>
+          <textarea name="request" id="request" placeholder="Question: " rows="1"></textarea>
+        </p>
+      </form>
+    </div>
+
+  </div>
+</main>
+{% endblock main %}
