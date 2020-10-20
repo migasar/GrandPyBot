@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS question;
+DROP TABLE IF EXISTS answer;
+
+CREATE TABLE question (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  body TEXT NOT NULL
+);
+
+CREATE TABLE answer (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  question_id INTEGER NOT NULL,
+  body TEXT,
+  FOREIGN KEY (question_id) REFERENCES question (id)
+);

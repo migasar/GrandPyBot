@@ -1,16 +1,49 @@
-from flask import Flask 
+import os
 
-#  from config import Config 
+from flask import Flask 
 
 
 app = Flask(__name__)
 
 
+"""
+def create_app(test_config=None):
+    # create and configure the app
+    app = Flask(__name__, instance_relative_config=True)
+    app.config.from_mapping(
+        SECRET_KEY='no-clue',
+        DATABASE=os.path.join(app.instance_path, 'grandpybot.sqlite'),
+    )
+
+    if test_config is None:
+        # load the instance config, if it exists, when not testing
+        app.config.from_pyfile('config.py', silent=True)
+    else:
+        # load the test config if passed in
+        app.config.from_mapping(test_config)
+
+    # ensure the instance folder exists
+    try:
+        os.makedirs(app.instance_path)
+    except OSError:
+        pass
+
+    # a simple page that says hello
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
+
+    from . import db
+    db.init_app(app)
+
+    return app
+"""
+
+
+#  from config import Config
 #  app.config.from_object(Config)
+
+#  from app import models
 
 
 from app import routes
-
-"""
-from app import models
-"""
