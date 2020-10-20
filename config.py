@@ -1,4 +1,7 @@
+"""
 import os
+
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
@@ -8,3 +11,4 @@ class Config(object):
         'sqlite:///' + os.path.join(basedir, 'app.db')
     
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+"""

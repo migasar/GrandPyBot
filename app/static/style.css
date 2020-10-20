@@ -1,17 +1,24 @@
 body {
-  background-color: #0b3c5d; /*prussian blue*/
+  background-color: #1d2731;
   color: aliceblue;
   font-family: "Trebuchet MS", sans-serif;
 }
-
-header {
-  background-color: #1d2731; /*ivory black*/
-  font-size: 0.7em;
-  margin: -0.7em;
-}
-#head-box {
+.ladder {
+  margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ladder > * {
+  padding: 0.1em;
+  flex: 1 1 auto;
+}
+
+
+.ribbon {
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -19,81 +26,113 @@ header {
   margin-left: 2em;
 }
 #catchphrase {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+#profile-name {
+  margin-left: 2em;
+  text-align: left;
+}
+#profile-links {
   margin-right: 2em;
+  text-align: right;
 }
 
+
 main {
-  font-size: 1.1em;
-  margin: 1em;
-  padding: 1em;
+  background-color: #0b3c5d;
 }
 #main-box {
+  margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: stretch;
+  align-items: stretch;
+  flex: 8 2 auto;
 }
+
 #dialog-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  font-size: 1.1em;
+  margin: 1em;
 }
 .exchange {
-  margin: 0.1em;
+  margin: auto;
 }
 .question {
+  margin-left: 1em;
   text-align: left;
 }
 .answer {
-  color: #d9b310; /*gold leaf*/
+  color: #d9b310; 
   font-family: Georgia;
   font-style: oblique;
+  margin-right: 1em;
   text-align: right;
 }
+
 #input-box {
+  margin: 1em 5em;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: center;
 }
 #request {
   background-color: aliceblue;
-  border-radius: 2px;
-  color: #0b3c5d; /*prussian blue*/
+  border-radius: 3px;
+  color: #0b3c5d; 
   font-family: "Courier New";
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: bold;
   text-align: justify;
-  margin: 1em;
-  padding: 1em;
-  width: 80em;
-  max-width: 100%;
+  padding: 0.5em;
+  width: 50rem;
 }
 #request:focus,
 #request:hover {
   box-shadow: 0px 4px 8px black;
 }
 
-footer {
-  background-color: #1d2731; /*ivory black*/
-  font-size: 0.7em;
-  margin: -0.7em;
+
+/*
+.user-input {
+  margin: auto;
 }
-#tail-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.bot-output {
+  margin: auto;
 }
-#profile-name {
-  margin: 0em 2em;
+
+h4 {
+  font-size: 2em;
 }
-#profile-links h3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  margin-right: 2em;
+h5, h6 {
+  font-size: 1em;
 }
+*/
+/*
+@media all and (min-width: 600px) {
+  .exchange {
+    flex: 1 0 0;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3 0px;
+  }
+  .header {
+    order: 1;
+  }
+  .dialog {
+    order: 2;
+  }
+  .output {
+    order: 3;
+  }
+  .input {
+    order: 4;
+  }
+  .footer {
+    order: 5;
+  }
+}
+*/

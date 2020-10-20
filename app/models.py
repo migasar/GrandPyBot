@@ -1,3 +1,4 @@
+"""
 from app import db  
 
 class User(db.Model):
@@ -8,3 +9,4 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+"""
