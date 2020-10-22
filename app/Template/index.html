@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+  {% if title %}
+  <title>{{ title }} - GrandPyBot</title>
+  {% else %}
+  <title>GrandPy Bot</title>
+  {% endif %}
+</head>
+
+<body class="ladder">
+
+  <header>
+    <div class="ribbon">
+      <p id="logo">[Logo]</p>
+      <h1 id="catchphrase">GrandPy Bot vous répond</h1>
+    </div>
+  </header>
+
+  <main>
+    <div id="main-box">
+
+      <div id="dialog-box">
+        <div class="exchange">
+          <p class="question">Question 1</p>
+          <p class="answer">Answer 1</p>
+        </div>
+        <div class="exchange">
+          <p class="question">Question 2</p>
+          <p class="answer">Answer 2</p>
+        </div>
+      </div>
+
+      <div id="input-box">
+        <form action="" method="POST">
+          <input type="text" name="request" placeholder="Question: " class="request" />
+          <button type="submit"> ? </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="ribbon">
+      <div id="profile-name">
+        <p>Mickael GASPAR</p>
+      </div>
+      <div id="profile-links">
+        <p>myGit</p>
+        <p>myTwitter</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
