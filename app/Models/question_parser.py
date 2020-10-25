@@ -10,8 +10,8 @@ from App.Static.constant import STOPWORD
 
 class TextParser:
     
-    def __init__(self, text):
-        self.text = text
+    def __init__(self):
+        self.text = None
         self.segment = None 
         self.stopwords = [self.flatten_text(word) for word in STOPWORD]
         
@@ -42,10 +42,10 @@ class TextParser:
         match = None
         for expression in regex:
             if re.search(expression, wording):
-
                 match = re.search(expression, wording)
                 return match.group('segment')
 
+        # return whole text, if the rational expressions gave no result
         if match is False:
             return wording
     
@@ -62,8 +62,6 @@ class TextParser:
 
     def filter_text(self, wording):
         # remove stopwords from the text
-
-        print(f"wording: {wording}")
         
         for word in self.stopwords:
             wording = wording.replace(f' {word} ', ' ')
