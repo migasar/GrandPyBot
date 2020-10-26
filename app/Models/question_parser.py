@@ -2,28 +2,27 @@
 Extract the significative words that could relate to a location.
 """
 
+
 import re 
 from unidecode import unidecode
 
-from App.Static.constant import STOPWORD
+from app.static.constant import STOPWORD
 
 
-class TextParser:
+class QuestionParser:
     
     def __init__(self):
-        self.text = None
-        self.segment = None 
         self.stopwords = [self.flatten_text(word) for word in STOPWORD]
         
     
     def flatten_text(self, wording):
+        """Normalize the characters of a text,
+        by ensuring that every character is in lowercase and striping every accent."""
 
         #  lower case
         wording = wording.lower()
-
         # strip accents
         wording = unidecode(wording)
-
         return wording
     
 
@@ -51,19 +50,17 @@ class TextParser:
     
 
     def remove_punctuation(self, wording):
-        # remove every punctuation from the text
+        """Remove every punctuation from the text."""
 
         if re.search(r"[^' a-zA-Z0-9-]", wording):
             return re.sub(r"[^' a-zA-Z0-9-]", "", wording)
-        
         else:
             return wording
 
 
     def filter_text(self, wording):
-        # remove stopwords from the text
+        """Remove stopwords from the text."""
         
         for word in self.stopwords:
             wording = wording.replace(f' {word} ', ' ')
-
         return wording
