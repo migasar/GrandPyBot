@@ -20,4 +20,4 @@ build/
 .code-workspace
 .vscode/
 
-credentials.py
+credential.py
