@@ -3,7 +3,7 @@
 
 import requests
 
-from app.models.api_gmap import APIgmap
+from grandpy.models.api_gmap import APIgmap
 
 
 class APIwiki:

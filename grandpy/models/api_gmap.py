@@ -3,8 +3,8 @@
 
 import requests 
 
-from app.models.question_parser import QuestionParser
-from app.static.credential import GOOGLE_API_KEY
+from grandpy.models.question_parser import QuestionParser
+from grandpy.static.credential import GOOGLE_API_KEY
 
 
 class APIgmap:

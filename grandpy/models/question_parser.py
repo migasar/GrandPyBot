@@ -6,7 +6,7 @@ Extract the significative words that could relate to a location.
 import re 
 from unidecode import unidecode
 
-from app.static.constant import STOPWORD
+from grandpy.static.constant import STOPWORD
 
 
 class QuestionParser:

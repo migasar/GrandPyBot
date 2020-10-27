@@ -1,7 +1,6 @@
-from app import app
-
-from app.models.question_parser import QuestionParser
-from app.static import constant
+from grandpy import app
+from grandpy.models.question_parser import QuestionParser
+from grandpy.static import constant
 
 
 question_parser = QuestionParser()
