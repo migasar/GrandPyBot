@@ -12,6 +12,7 @@ from grandpy.static.constant import STOPWORD
 class QuestionParser:
     
     def __init__(self):
+
         self.stopwords = [self.flatten_text(word) for word in STOPWORD]
         
     
