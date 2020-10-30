@@ -26,12 +26,13 @@ class APIgmap:
         cleaned_input = question.strip()
         formated_input = cleaned_input.replace(" ", "+")
 
-        params_url = f"input={formated_input}&types=geocode&key={self.api_key}"
+        params_url = f"address={formated_input}&types=geocode&key={self.api_key}"
         endpoint = self.base_url + params_url
 
-        r = requests.get(endpoint)
+        response = requests.get(endpoint)
+       
         try:
-            results: r.json['results'][0]
+            results = response.json()['results'][0]
             latitude = results['geometry']['location']['lat']
             longitude = results['geometry']['location']['lng']
         except:
