@@ -34,7 +34,6 @@ class APIwiki:
         r = requests.get(url=self.base_url, params=params_url)
         try:
             results = r.json['query']['geosearch'][0]
-            place = results['title']
             page_id = results['page_id']
         except:
             pass

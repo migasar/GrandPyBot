@@ -1,6 +1,5 @@
-import re
-from unidecode import unidecode
-from grandpy.static.constant import STOPWORD
+import pytest 
+
 
 from grandpy.models import question_parser
 
@@ -16,7 +15,9 @@ class TestFlattenText:
             with the same characters but without uppercase.
         """
 
-        pass
+        script = question_parser.QuestionParser
+        assert script.flatten_text("Foo Bar") == "foo bar"
+
 
 
     def test_flatten_text_function_strip_accents_of_input(self):
@@ -27,7 +28,8 @@ class TestFlattenText:
             with the same characters but without accents.
         """
 
-        pass
+        script = question_parser.QuestionParser
+        assert script.flatten_text("açôcàr") == "acocar"
 
 
     def test_flatten_text_function_used_on_stopwords_from_constant(self):
@@ -39,7 +41,8 @@ class TestFlattenText:
             and formating them in lowercase.
         """
 
-        pass
+        script = question_parser.QuestionParser
+        assert script.flatten_text(['Foô', 'Bàr']) == ['foo', 'bar']
 
 
 class TestSegmentText:
@@ -130,7 +133,7 @@ class TestSegmentText:
         pass
 
 
-class TestRemovePunctuation(self):
+class TestRemovePunctuation:
 
     def test_remove_punctuation_function_find_every_punctuation_in_text(self):
         """
@@ -172,7 +175,7 @@ class TestRemovePunctuation(self):
         pass
 
 
-class TestFilterText(self):
+class TestFilterText:
 
     def test_filter_text_function_replace_stopword_with_whitespace(self):
         """
