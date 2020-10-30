@@ -1,10 +1,7 @@
-import pytest 
+from grandpy.models.question_parser import QuestionParser
 
 
-from grandpy.models import question_parser
-
-
-class TestFlattenText:
+class TestQuestionParserFlattenText:
 
     def test_flatten_text_function_lower_cases_of_input(self):
         """
@@ -14,10 +11,8 @@ class TestFlattenText:
         THEN it should return a string 
             with the same characters but without uppercase.
         """
-
-        script = question_parser.QuestionParser
+        script = QuestionParser()
         assert script.flatten_text("Foo Bar") == "foo bar"
-
 
 
     def test_flatten_text_function_strip_accents_of_input(self):
@@ -27,8 +22,7 @@ class TestFlattenText:
         THEN it should return a string 
             with the same characters but without accents.
         """
-
-        script = question_parser.QuestionParser
+        script = QuestionParser()
         assert script.flatten_text("açôcàr") == "acocar"
 
 
@@ -40,12 +34,11 @@ class TestFlattenText:
             by striping any accent on the characters 
             and formating them in lowercase.
         """
-
-        script = question_parser.QuestionParser
+        script = QuestionParser()
         assert script.flatten_text(['Foô', 'Bàr']) == ['foo', 'bar']
 
 
-class TestSegmentText:
+class TestQuestionParserSegmentText:
 
     def test_segment_text_function_regex1_catch_expected_occurence(self):
         """
@@ -133,7 +126,7 @@ class TestSegmentText:
         pass
 
 
-class TestRemovePunctuation:
+class TestQuestionParserRemovePunctuation:
 
     def test_remove_punctuation_function_find_every_punctuation_in_text(self):
         """
@@ -175,7 +168,7 @@ class TestRemovePunctuation:
         pass
 
 
-class TestFilterText:
+class TestQuestionParserFilterText:
 
     def test_filter_text_function_replace_stopword_with_whitespace(self):
         """

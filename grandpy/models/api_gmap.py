@@ -27,7 +27,7 @@ class APIgmap:
         formated_input = cleaned_input.replace(" ", "+")
 
         params_url = f"input={formated_input}&types=geocode&key={self.api_key}"
-        endpoint = base_url + params_url
+        endpoint = self.base_url + params_url
 
         r = requests.get(endpoint)
         try:

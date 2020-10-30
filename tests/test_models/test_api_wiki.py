@@ -1,10 +1,7 @@
-import pytest
+from grandpy.models.api_wiki import APIwiki
 
 
-from grandpy.models import api_wiki 
-
-
-class TestGetPlace:
+class TestAPIwikiGetPlace:
 
     def test_get_place_fail_with_other_attribute_type_than_integer(self):
         """
@@ -12,8 +9,7 @@ class TestGetPlace:
         WHEN the method tries to run
         THEN it raises an error.
         """
-
-        script = api_wiki.APIwiki
+        script = APIwiki()
         assert script.get_place('foo') == TypeError
 
 
@@ -23,8 +19,7 @@ class TestGetPlace:
         WHEN we search in the components of the JSON
         THEN we find the specified components and return their values.
         """
-
-        script = api_wiki.APIwiki
+        script = APIwiki()
         assert script.get_place(1, 3) == 141576
 
 
@@ -36,12 +31,11 @@ class TestGetPlace:
         THEN the function silently raises an exception, 
             and return those components but with null values.
         """
+        script = APIwiki()
+        assert script.get_place(None, None) is None
 
-        script = api_wiki.APIwiki
-        assert script.get_place(None, None) == None
 
-
-class TestGetPage:
+class TestAPIwikiGetPage:
 
     def test_get_page_fail_with_other_attribute_type_than_integer(self):
         """
@@ -49,8 +43,7 @@ class TestGetPage:
         WHEN the method tries to run
         THEN it raises an error.
         """
-
-        script = api_wiki.APIwiki
+        script = APIwiki()
         assert script.get_page('foo') == TypeError
 
 
@@ -60,9 +53,9 @@ class TestGetPage:
         WHEN we search in the components of the JSON
         THEN we find the specified components and return their values.
         """
-
-        script = api_wiki.APIwiki
+        script = APIwiki()
         assert script.get_page(141576) == "Lorem Ipsum ..."
+
 
     def test_get_page_exception_return_script_with_null_value(self):
         """
@@ -72,6 +65,5 @@ class TestGetPage:
         THEN the function silently raises an exception, 
             and return those components but with null values.
         """
-
-        script = api_wiki.APIwiki
-        assert script.get_page(None) == None
+        script = APIwiki()
+        assert script.get_page(None) is None

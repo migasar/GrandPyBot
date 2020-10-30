@@ -1,9 +1,7 @@
-import pytest
-
-from grandpy.models import api_gmap
+from grandpy.models.api_gmap import APIgmap
 
 
-class TestGetLocation:
+class TestAPIgmap:
 
     def test_get_location_fail_with_other_attribute_type_than_string(self):
         """
@@ -11,9 +9,8 @@ class TestGetLocation:
         WHEN the method tries to run
         THEN it raises an error.
         """
-
-        script = api_gmap.APIgmap
-        assert script.get_location(7) == TypeError
+        script = APIgmap()
+        assert self.script.get_location(7) == TypeError
 
 
     def test_get_location_return_expected_script(self):
@@ -22,9 +19,8 @@ class TestGetLocation:
         WHEN we search in the components of the JSON
         THEN we find the specified components and return their values.
         """
-
-        script = api_gmap.APIgmap
-        assert script.get_location('tour eiffel') == 1, 3
+        script = APIgmap()
+        assert self.script.get_location(question='tour eiffel') == 1, 3
         # 'tour eiffel' assertion should be compared 
         # to latitude and longitude of the Eiffel Tower on Google Map
 
@@ -37,6 +33,5 @@ class TestGetLocation:
         THEN the function silently raises an exception, 
             and return those components but with null values.
         """
-
-        script = api_gmap.APIgmap
-        assert script.get_location('a') == None, None
+        script = APIgmap()
+        assert self.script.get_location('a') is None, None
