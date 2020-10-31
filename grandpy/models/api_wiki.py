@@ -31,7 +31,6 @@ class APIwiki:
             }
 
         response = requests.get(url=self.base_url, params=params_url)
-
         try:
             results = response.json()['query']['geosearch'][0]
             page_id = results['pageid']

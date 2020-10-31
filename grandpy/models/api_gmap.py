@@ -30,7 +30,6 @@ class APIgmap:
         endpoint = self.base_url + params_url
 
         response = requests.get(endpoint)
-       
         try:
             results = response.json()['results'][0]
             latitude = results['geometry']['location']['lat']
