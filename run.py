@@ -1,1 +1,0 @@
-from grandpy import app

@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  {% if title %}
-  <title>{{ title }} - GrandPyBot</title>
-  {% else %}
   <title>GrandPy Bot</title>
-  {% endif %}
+
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
 <body class="ladder">
-
   <header>
     <div class="ribbon">
-      <p id="logo">[Logo]</p>
-      <h1 id="catchphrase">GrandPy Bot vous répond</h1>
+      <div class="logo">
+        <p>[Logo]</p>
+      </div>
+      <h1 class="catchphrase">GrandPy Bot vous répond</h1>
     </div>
   </header>
 
   <main>
-    <div id="main-box">
-
+    <div class="main-box">
       <div id="dialog-box">
-        <div class="exchange">
-          <p class="question">Question 1</p>
-          <p class="answer">Answer 1</p>
-        </div>
-        <div class="exchange">
-          <p class="question">Question 2</p>
-          <p class="answer">Answer 2</p>
-        </div>
+        <p class="question">Question 1</p>
+        <p class="answer">Answer 1</p>
       </div>
-
-      <div id="input-box">
-        <form action="" method="POST">
-          <input type="text" name="request" placeholder="Question: " class="request" />
-          <button type="submit"> ? </button>
-        </form>
+      <div class="input-box">
+        <p>
+          <form id="user-form">
+            <label for="userText"></label>
+            <input type="text" id="userText" name="userText" class="input-user-text" placeholder="Question:">
+            <input type="submit" value="Envoyer">
+          </form>
+        </p>
       </div>
-
     </div>
   </main>
 
   <footer>
     <div class="ribbon">
-      <div id="profile-name">
+      <div class="profile-name">
         <p>Mickael GASPAR</p>
       </div>
-      <div id="profile-links">
+      <div class="profile-links">
         <p>myGit</p>
         <p>myTwitter</p>
       </div>
     </div>
   </footer>
 
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+  <script type="text/javascript" src="../static/script.js"></script>
 </body>
-
 </html>

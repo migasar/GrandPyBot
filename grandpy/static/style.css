@@ -1,11 +1,11 @@
 html {
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: "Courier New", sans-serif;
 }
+
 
 body {
-  color: #F0F5F8; /*Alice Blue*/
+  color: #f0f5f8;
 }
-
 .ladder {
   margin: auto;
   display: flex;
@@ -24,21 +24,23 @@ body {
   align-items: center;
 }
 
+
 header {
-  background-color: #1E2934; /*Gunmetal*/
+  background-color: #1e2934;
 }
-#logo {
+.logo {
   margin-left: 2em;
 }
-#catchphrase {
+.catchphrase {
   margin: auto;
   text-align: center;
 }
 
+
 main {
-  background-color: #093048; /*Prussian Blue*/
+  background-color: #093048;
 }
-#main-box {
+.main-box {
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -46,55 +48,50 @@ main {
   align-items: stretch;
   flex: 8 2 auto;
 }
-
 #dialog-box {
   margin: 1em;
-}
-.exchange {
-  margin: auto;
 }
 .question {
   margin-left: 1em;
   text-align: left;
 }
 .answer {
-  color: #DBBC57; /*Old Gold*/
-  font-family: Georgia;
+  color: #dbbc57;
   font-style: oblique;
   margin-right: 1em;
   text-align: right;
 }
-
-#input-box {
+.input-box {
   margin: 1em auto;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
 }
-.request {
-  background-color: #F0F5F8; /*Alice Blue*/
+.input-user-text {
+  background-color: #f0f5f8;
   border-radius: 3px;
-  color: #093048; /*Prussian Blue*/
-  font-family: "Courier New";
+  color: #093048;
+  font-family: "Courier New", serif;
   font-size: 1.2em;
   font-weight: bold;
   text-align: justify;
   padding: 0.5em;
   width: 50rem;
 }
-.request:focus,
-.request:hover {
+.input-user-text:focus,
+.input-user-text:hover {
   box-shadow: 0px 4px 8px black;
 }
 
+
 footer {
-  background-color: #1E2934; /*Gunmetal*/
+  background-color: #1e2934;
 }
-#profile-name {
+.profile-name {
   margin-left: 2em;
   text-align: left;
 }
-#profile-links {
+.profile-links {
   margin-right: 2em;
   text-align: right;
 }
