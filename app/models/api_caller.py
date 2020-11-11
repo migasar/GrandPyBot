@@ -2,7 +2,8 @@
 
 import requests
 
-from app.static.credentials import GOOGLE_API_KEY
+# from app.static.credentials import GOOGLE_API_KEY
+from app.static.constant import GOOGLE_API_KEY
 
 
 class APIgmap:
