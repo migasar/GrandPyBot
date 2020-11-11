@@ -1,6 +1,6 @@
 """Handle the parsing of the texts receievd and sent to the front-end."""
 
-import re 
+import re
 import random
 from unidecode import unidecode
 
@@ -9,7 +9,7 @@ from grandpy.models.api_caller import APIgmap, APIwiki
 
 
 class QuestionParser:
-    """Handle the parsing of the text written by the user. 
+    """Handle the parsing of the text written by the user.
     Extract the significative words that could relate to a location.
     """
 
@@ -19,7 +19,7 @@ class QuestionParser:
 
     def flatten_text(self, wording):
         """Normalize the characters of a text,
-        by ensuring that the whole string is in lowercase, 
+        by ensuring that the whole string is in lowercase,
         and by striping every accent in it.
         """
 
@@ -29,7 +29,7 @@ class QuestionParser:
         wording = wording.lower()
         # strip accents
         wording = unidecode(wording)
-        
+
         return wording
 
 
@@ -59,7 +59,7 @@ class QuestionParser:
 
     def remove_punctuation(self, wording):
         """Remove every punctuation from the text."""
-        
+
         try:
             re.search(r"[^' a-zA-Z0-9-]", wording)
         except TypeError:
@@ -68,13 +68,13 @@ class QuestionParser:
         else:
             if re.search(r"[^' a-zA-Z0-9-]", wording):
                 wording = re.sub(r"[^' a-zA-Z0-9-]", "", wording)
-       
+
         return wording
 
 
     def filter_text(self, wording):
         """Remove stopwords from the text."""
-        
+
         try:
             for word in self.stopwords:
                 wording = wording.replace(f' {word} ', ' ')
@@ -115,7 +115,7 @@ class AnswerBuilder:
         self.botquotes = WESTWORLD_QUOTES
         self.api_gmap = APIgmap()
         self.api_wiki = APIwiki()
-    
+
 
     def spot_response(self, query):
         """Chain the calls to the API of Gmap and Wikipedia,
@@ -126,26 +126,18 @@ class AnswerBuilder:
         gmap_spot = self.api_gmap.get_location(query)
 
         # test if gmap_spot spotted a location, before fetching a text on the location
-        if gmap_spot is not None:
-
-            # if the location was spotted, we try to extract a sample text 
-            # from a page on Wikipedia related to the location
-            wiki_page = self.api_wiki.get_page_id(gmap_spot)
-            wiki_extract = self.api_wiki.get_page_text(wiki_page)
-
-            # we append in a dictionary all the elements found with the API calls 
-            bot_response = self.stack_response(
-                spotted=True,
-                extract=wiki_extract,
-                location=gmap_spot
-        )
-
-        else:
-            # if there is no location based on the query, 
+        if gmap_spot is None:
+            # if there is no location based on the query,
             # then call the function with null parameters
-            bot_response = self.stack_response()
-        
-        return bot_response
+            return self.stack_response()
+
+        # if the location was spotted, we try to extract a sample text
+        # from a page on Wikipedia related to the location
+        wiki_page = self.api_wiki.get_page_id(gmap_spot)
+        wiki_extract = self.api_wiki.get_page_text(wiki_page)
+
+        # we append in a dictionary all the elements found with the API calls
+        return self.stack_response(spotted=True, extract=wiki_extract, location=gmap_spot)
 
 
     def stack_response(self, spotted=False, extract=None, location=None):
@@ -162,12 +154,13 @@ class AnswerBuilder:
         }
 
         # if none of the attributes is false or empty
-        if spotted and extract and location:
+        if spotted is True:
             response_elements['context'] = random.choice(self.botquotes['success'])
             response_elements['address'] = location['address']
             response_elements['latitude'] = location['latitude']
             response_elements['longitude'] = location['longitude']
+
         else:
             response_elements['context'] = random.choice(self.botquotes['failure'])
-        
+
         return response_elements

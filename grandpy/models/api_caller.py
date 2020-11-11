@@ -121,8 +121,8 @@ class APIwiki:
             text_extract = results['extract']
 
             # Fetch the first paragraph from the text on the body of the page
-            first_line = text_extract.splitlines()[0]
+            page_extract = text_extract.splitlines()[0]
         except:
             pass
 
-        return first_line
+        return page_extract
