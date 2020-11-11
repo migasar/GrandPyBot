@@ -1,7 +1,7 @@
 import pytest
 import requests
 
-from grandpy.models.api_caller import APIgmap, APIwiki
+from app.models.api_caller import APIgmap, APIwiki
 
 
 class MockResponse:

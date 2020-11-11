@@ -1,4 +1,4 @@
-from grandpy.models.query_parser import QuestionParser
+from app.models.query_parser import QuestionParser
 
 
 def test_flatten_text_function_lower_cases_and_strip_accents_of_input():
