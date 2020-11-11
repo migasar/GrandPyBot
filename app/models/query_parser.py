@@ -126,10 +126,10 @@ class AnswerBuilder:
         gmap_spot = self.api_gmap.get_location(query)
 
         # test if gmap_spot spotted a location, before fetching a text on the location
-        # if gmap_spot is None:
+        if gmap_spot is None:
             # if there is no location based on the query,
             # then call the function with null parameters
-            # return self.stack_response()
+            return self.stack_response()
 
         # if the location was spotted, we try to extract a sample text
         # from a page on Wikipedia related to the location

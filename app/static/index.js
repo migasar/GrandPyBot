@@ -86,7 +86,10 @@ userFormElt.addEventListener('submit', function (event) {
     // Send the content of the input to the server
     postFormData("/ask", new FormData(userFormElt))
     .then(data => {
+        
+        // TEST
         console.log(data);
+        
         // Create the answer of the bot
         composeAnswer(data);
     })

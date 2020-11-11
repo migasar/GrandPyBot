@@ -24,5 +24,4 @@ def ask():
     answer_builder = query_parser.AnswerBuilder()
     response = answer_builder.spot_response(user_query)
 
-    # return jsonify(response)
-    return response
+    return jsonify(response)
