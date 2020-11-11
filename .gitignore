@@ -21,3 +21,4 @@ build/
 .vscode/
 
 credentials.py
+run_demo.py
