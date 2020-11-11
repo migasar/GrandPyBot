@@ -5,4 +5,3 @@ app = Flask(__name__)
 
 
 from app import route
-# from . import app 
