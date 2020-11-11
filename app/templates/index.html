@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>GrandPy Bot</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+  <header>
+    <div class="ribbon">
+      <div class="logo">[Logo]</div>
+      <div class="catchphrase">GrandPy Bot vous répond</div>
+    </div>
+  </header>
+
+  <main>
+    <div id="dialog-box">
+      <div class="question">Question 1</div>
+      <div class="answer">Answer 1</div>
+    </div>
+    <div id="input-box">
+      <form id="user-form" >
+        <label for="userText"></label>
+        <input type="text" id="userText" name="userText" class="input-user-text" placeholder="Question:">
+        <input type="submit" value="Envoyer">
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="ribbon">
+      <div class="profile-name">Mickael  GASPAR</div>
+      <div class="profile-links">
+        <p>myGit</p>
+        <p>myTwitter</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe3gxU6P4vkZPHFiUUctnwdwWbxJ8u-Bo&callback=initMap&libraries=&v=weekly" defer></script>
+  <script type="text/javascript" src="../static/index.js"></script>
+</body>
+</html>
