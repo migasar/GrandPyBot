@@ -1,73 +1,77 @@
 from grandpy import app
 
 from grandpy.static import constant
-# from grandpy.models.query_parser import QuestionParser
-# from grandpy.models.api_caller import APIgmap, APIwiki
 from grandpy.models import api_caller, query_parser
 
+# from grandpy.models.query_parser import QuestionParser
+# from grandpy.models.api_caller import APIgmap, APIwiki
 
 
 # ###### Question Parser ###### #
 
+question_parser = query_parser.QuestionParser()
 
-# comments
+user_question_ = "@"
 
-    # question_parser = QuestionParser()
+user_question = """
+Bonsoir Juju,  j'espère que tu as passé une belle semaine. 
+Est-ce que tu pourrais m'indiquer où se trouve la tour eiffel? Merci d'avance et salutations à Mamie.
+"""
+print(f"user question : {user_question}")
 
-    # user_question_ = "@"
+flat_text = question_parser.flatten_text(user_question)
+print(f"flat text: {flat_text}")
 
-    # user_question = """
-    # Bonsoir Juju,  j'espère que tu as passé une belle semaine. 
-    # Est-ce que tu pourrais m'indiquer où se trouve la tour eiffel? Merci d'avance et salutations à Mamie.
-    # """
-    # print(f"user question : {user_question}")
+text_segment = question_parser.segment_text(flat_text)
+print(f"text segment:  {text_segment}")
 
-    # flat_text = question_parser.flatten_text(user_question)
-    # print(f"flat text: {flat_text}")
+no_punctuation_text = question_parser.remove_punctuation(text_segment)
+print(f"punctuation removed: {no_punctuation_text}")
 
-    # text_segment = question_parser.segment_text(flat_text)
-    # print(f"text segment:  {text_segment}")
+filtered_text = question_parser.filter_text(no_punctuation_text)
+print(f"filtered text:  {filtered_text}")
 
-    # no_punctuation_text = question_parser.remove_punctuation(text_segment)
-    # print(f"punctuation removed: {no_punctuation_text}")
-
-    # filtered_text = question_parser.filter_text(no_punctuation_text)
-    # print(f"filtered text:  {filtered_text}")
-
-    # print()
+print()
 
 
-    # # ###### API Gmap ###### #
+# ###### API Gmap ###### #
 
-    # api_gmap = APIgmap()
+api_gmap = api_caller.APIgmap()
 
-    # coordinates = api_gmap.get_location(filtered_text)
-    # print(f"coordinates:  {coordinates}")
-    # print(f"latitude:  {coordinates[0]}")
+coordinates = api_gmap.get_location(filtered_text)
+print(f"coordinates:  {coordinates}")
+print(f"latitude:  {coordinates['latitude']}")
 
-    # def none_coordinates(coordinate):
-    #     if not coordinate[0] or coordinate[1]:
-    #         print("coordinates null")
-    #     elif type(coordinate[0]) and type(coordinate[1]) is float:
-    #         print("floating coordinates")
-    #     else:
-    #         print("coordinates is not None type")
+def none_coordinates(coordinate):
+    if coordinate is None:
+        print("coordinates null")
+    elif type(coordinate['latitude']) and type(coordinate['longitude']) is float:
+        print("floating coordinates")
+    else:
+        print("coordinates is not None type")
 
-    # none_coordinates(coordinates)
+none_coordinates(coordinates)
 
 
-    # # ###### API Wiki ###### #
+# ###### API Wiki ###### #
 
-    # api_wiki = APIwiki()
+api_wiki = api_caller.APIwiki()
 
-    # page_id = api_wiki.get_page_id(coordinates[0], coordinates[1])
-    # print(f"page number:  {page_id}")
+page_id = api_wiki.get_page_id(coordinates)
+print(f"page number:  {page_id}")
 
-    # page_extract = api_wiki.get_page_text(page_id)
-    # print(f"""
-    # page extract: 
-    # {page_extract}""")
-
+page_extract = api_wiki.get_page_text(page_id)
+print("page extract:")
+print(page_extract)
+print()
+print("TEST Page Extract: ")
+print(
+    """La tour Eiffel  est une tour de fer puddlé de 324 mètres de hauteur (avec antennes) située à Paris, """
+    """à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7e arrondissement. """
+    """Son adresse officielle est 5, avenue Anatole-France."""
+)
+print()
+    
 
 user_text = """
 Bonsoir Juju,  j'espère que tu as passé une belle semaine. 
@@ -87,24 +91,3 @@ user_query = question_parser.flatten_text(user_text)
 user_query = question_parser.segment_text(user_query)
 user_query = question_parser.remove_punctuation(user_query)
 user_query = question_parser.filter_text(user_query)
-
-# try to find coordinates of a location related to the keywords
-gmap_spot = api_gmap.get_location(user_query)
-
-# test if gmap_spot spotted a location, before fetching a text on the location
-if gmap_spot[0]:
-    # location spotted
-    wiki_page = api_wiki.get_page_id(gmap_spot[0], gmap_spot[1])
-    wiki_extract = api_wiki.get_page_text(wiki_page)
-    bot_reply = answer_piler.stack_response(
-        spotted=True,
-        extract=wiki_extract,
-        coordinates=gmap_spot
-    )
-
-else:
-    # no location based on the query
-    bot_reply = answer_piler.stack_response()
-
-# return jsonify(bot_reply)
-print(f"bot reply: {bot_reply}")

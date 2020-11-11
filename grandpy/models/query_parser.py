@@ -14,7 +14,6 @@ class QuestionParser:
     """
 
     def __init__(self):
-
         self.stopwords = [self.flatten_text(word) for word in STOPWORD]
 
 
@@ -63,7 +62,6 @@ class QuestionParser:
         
         try:
             re.search(r"[^' a-zA-Z0-9-]", wording)
-
         except TypeError:
             pass
 
@@ -80,7 +78,6 @@ class QuestionParser:
         try:
             for word in self.stopwords:
                 wording = wording.replace(f' {word} ', ' ')
-        
         except AttributeError:
             pass
 
@@ -115,58 +112,62 @@ class AnswerBuilder:
     """
 
     def __init__(self):
-
         self.botquotes = WESTWORLD_QUOTES
         self.api_gmap = APIgmap()
         self.api_wiki = APIwiki()
     
 
     def spot_response(self, query):
+        """Chain the calls to the API of Gmap and Wikipedia,
+        to get all the geospatial elements of the bot response.
+        """
 
         # try to find the coordinates of a location related to the text
         gmap_spot = self.api_gmap.get_location(query)
 
         # test if gmap_spot spotted a location, before fetching a text on the location
-        if gmap_spot[0]:
+        if gmap_spot is not None:
 
             # if the location was spotted, we try to extract a sample text 
             # from a page on Wikipedia related to the location
-            wiki_page = self.api_wiki.get_page_id(gmap_spot[0], gmap_spot[1])
+            wiki_page = self.api_wiki.get_page_id(gmap_spot)
             wiki_extract = self.api_wiki.get_page_text(wiki_page)
 
             # we append in a dictionary all the elements found with the API calls 
             bot_response = self.stack_response(
                 spotted=True,
                 extract=wiki_extract,
-                coordinates=gmap_spot
+                location=gmap_spot
         )
 
         else:
-            # no location based on the query
+            # if there is no location based on the query, 
+            # then call the function with null parameters
             bot_response = self.stack_response()
         
         return bot_response
 
 
-    def stack_response(self, spotted=False, extract=None, coordinates=None):
+    def stack_response(self, spotted=False, extract=None, location=None):
         """Pile all the informations retrieved from the queries in a single object."""
 
         response_elements = {
             'context': None,
             'reply': random.choice(self.botquotes['reply']),
             'extract': extract,
+            'address': None,
             'latitude': None,
             'longitude': None,
             'spotted': spotted
         }
 
         # if none of the attributes is false or empty
-        if spotted and extract and coordinates[0]:
+        if spotted and extract and location:
             response_elements['context'] = random.choice(self.botquotes['success'])
-            response_elements['latitude'] = coordinates[0]
-            response_elements['longitude'] = coordinates[1]
-
+            response_elements['address'] = location['address']
+            response_elements['latitude'] = location['latitude']
+            response_elements['longitude'] = location['longitude']
         else:
             response_elements['context'] = random.choice(self.botquotes['failure'])
-
+        
         return response_elements

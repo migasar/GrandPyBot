@@ -9,9 +9,9 @@ def test_flatten_text_function_lower_cases_and_strip_accents_of_input():
     """
 
     result = QuestionParser()
-    text = "Foô Bàr"
+    pseudo_text = "Foô Bàr"
 
-    assert result.flatten_text(text) == "foo bar"
+    assert result.flatten_text(pseudo_text) == "foo bar"
 
 
 def test_segment_text_function_catch_expected_occurence():
@@ -23,12 +23,12 @@ def test_segment_text_function_catch_expected_occurence():
     """
 
     result = QuestionParser()
-    text = """
+    pseudo_text = """
             Bonsoir Arnold, es-tu sorti de ton long sommeil sans reves? 
             Saurais-tu ou se trouve la sortie du labyrinthe? 
             """
 
-    assert result.segment_text(text) == " la sortie du labyrinthe"
+    assert result.segment_text(pseudo_text) == " la sortie du labyrinthe"
 
 
 def test_remove_punctuation_function_strip_punctuations_in_text():
@@ -39,9 +39,9 @@ def test_remove_punctuation_function_strip_punctuations_in_text():
     """
 
     result = QuestionParser()
-    text = "Hello, world!"
+    pseudo_text = "Hello, world!"
     
-    assert result.remove_punctuation(text) == "Hello world"
+    assert result.remove_punctuation(pseudo_text) == "Hello world"
 
 
 def test_filter_text_function_replace_stopword_with_whitespace():
@@ -55,6 +55,6 @@ def test_filter_text_function_replace_stopword_with_whitespace():
     """
 
     result = QuestionParser()
-    text = "ces jeux violents auront une fin violente"
+    pseudo_text = "ces jeux violents auront une fin violente"
 
-    assert result.filter_text(text) == "ces jeux violents fin violente"
+    assert result.filter_text(pseudo_text) == "ces jeux violents fin violente"

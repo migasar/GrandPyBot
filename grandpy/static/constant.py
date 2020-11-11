@@ -1,5 +1,6 @@
 """Constants of the program."""
 
+
 STOPWORD = [
     "a",
     "abord",
@@ -607,44 +608,43 @@ STOPWORD = [
     "été",
     "être",
     "ô"
-    ] 
-
+]
 
 WESTWORLD_QUOTES = {
     'reply' : [
-        "Tu t'es perdu l'ami? Tu cherches ton chemin? ", 
-        "Tu as des histoires à me raconter l'ami? ",
-        "Tu vas devoir suivre le labyrinthe. "
+        "Tu t'es perdu l'ami? Tu cherches ton chemin?  ",
+        "Tu as des histoires à me raconter l'ami?  ",
+        "Tu vas devoir suivre le labyrinthe.  "
+        "Avez-vous déjà remis en question la nature de votre réalité? ",
     ],
     'success': [
-        "Bravo, mon ami. Il semble que vous ayez trouvé le centre du labyrinthe. ", 
-        "Je suppose que les gens aiment lire sur les choses qu'ils veulent le plus et qu'ils expérimentent le moins. ", 
-        "J'en ai vu des choses dans ma chienne de vie. ", 
-        "Tous ces plaisirs violents auront une fin violente. ", 
-        "La beauté est un leurre. ",
-        "Ce qui est réel est irremplaçable. ",
-        "Certaines personnes choisissent de voir la laideur de ce monde. Le désarroi. Je choisis d'en voir la beauté. De croire qu'il y a un ordre à nos jours, un but. ", 
-        "J'aime à me souvenir de ce que mon père m'a appris. Qu'à un moment ou à un autre, nous sommes tous de nouveaux arrivants dans ce monde. ",
-        "Tout est magique dans ce monde, excepté le magicien. ",
-        "Seuls les gens ennuyeux s'ennuient. ",
-        "Vous ne pouvez pas jouer à Dieu sans vous acoquiner avec le diable. ",
-        "Le problème, mon ami, c'est que ce que vous et moi faisons est si compliqué. Nous pratiquons la sorcellerie. Nous énonçons les mots justes. Ensuite, nous créons la vie elle-même… à partir du chaos. ",
-        "J'ai toujours aimé les bonnes histoires. Je pense que les histoires nous ennoblissent, qu'elles réoarent ce qui est brisé en nous et nous aident à devenir la personne que nous rêvions d'être. Des mensonges qui nous en disent plus sur la réalité. ",
-        "On ne peut pas définir la conscience parce que la conscience n’existe pas. Les humains aiment croire qu’il y a quelque chose d’unique dans leur façon de percevoir le monde, mais la réalité c'est qu'ils vivent dans des boucles, aussi étroites et fermées que celles dans lesquelles évoluent les robots. ",
-        "C’est une chose difficile, de réaliser que toute votre vie n'est qu'une fiction hideuse. ",
-        "Toute ma vie, je me suis vanté d’être un survivant. Mais la survie n'est qu'une autre boucle. ",
-        "Folie du genre humain, il y a toujours un désir d'en savoir plus. "
+        "Bravo, mon ami. Il semble que vous soyez parvenu au centre du labyrinthe.  ",
+        "Je suppose que les gens aiment lire sur les choses qu'ils veulent le plus et qu'ils expérimentent le moins.  ",
+        "J'en ai vu des choses dans ma chienne de vie.  ",
+        "Tous ces plaisirs violents auront une fin violente.  ",
+        "La beauté est un leurre.  ",
+        "Ce qui est réel est irremplaçable.  ",
+        "Certaines personnes choisissent de voir la laideur de ce monde.  Le désarroi.  Je choisis d'en voir la beauté. De croire qu'il y a un ordre à nos vies, un but.  ",
+        "J'aime à me souvenir de ce que mon père m'a appris.  Qu'à un moment ou à un autre, nous sommes tous de nouveaux arrivants dans ce monde.  ",
+        "Tout est magique dans ce monde, excepté le magicien.  ",
+        "Seuls les gens ennuyeux s'ennuient.  ",
+        "Le problème, mon ami, c'est que ce que vous et moi faisons est si compliqué.  Nous pratiquons la sorcellerie.  Nous énonçons les mots justes.  Ensuite, nous créons la vie elle-même… à partir du chaos.  ",
+        "J'ai toujours aimé les bonnes histoires.  Je pense que les histoires nous ennoblissent, qu'elles réoarent ce qui est brisé en nous et nous aident à devenir la personne que nous rêvions d'être.  Des mensonges qui nous en disent plus sur la réalité.  ",
+        "C’est une chose difficile, de réaliser que toute votre vie n'est qu'une fiction hideuse.  ",
+        "Folie du genre humain, il y a toujours un désir d'en savoir plus.  "
     ],
     'failure' : [
-        "Le labyrinthe ne t'ai pas destiné. ",
-        "Si vous ne pouvez pas faire la différence, est-ce important que je sois réel ou non? ",
-        "Un homme dont on met 10 ans à corriger l'erreur, c'est un sacré mec."
-        "Avez-vous déjà remis en question la nature de votre réalité? ",
-        "De toute façon, j'ai toujours fait plus confiance au code qu'aux gens. "
-        "Le piano n'assassine pas le pianiste s'il n'aime pas la musique. ",
-        "L'évolution a forgé l'intégralité de la vie consciente sur cette planète en utilisant un seul outil… L'erreur. ",
+        "Le labyrinthe ne t'ai pas destiné.  ",
+        "Si vous ne pouvez pas faire la différence, est-ce important que ce soit réel ou non? ",
+        "Un homme dont on met 10 ans à corriger l'erreur, c'est un sacré mec.  "
+        "De toute façon, j'ai toujours fait plus confiance au code qu'aux gens.  "
+        "Le piano n'assassine pas le pianiste s'il n'aime pas la musique.  ",
+        "Vous ne pouvez pas jouer à Dieu sans vous acoquiner avec le diable.  ",
+        "L'évolution a forgé l'intégralité de la vie consciente sur cette planète en utilisant un seul outil…  L'erreur.  ",
         "Ça vous ait déjà arrivé d'avoir quelque chose sur le bout de la langue, mais plus vous essayez de vous en souvenir, plus cela vous échappe? ",
-        "Le labyrinthe est le symbole même de la vie d’un homme. Des choix qu'il fait, des rêves auxquels il s'accroche. ",
-        "Quelqu'un m'a dit un jour qu'il y avait un chemin pour tout le monde. Et mon chemin me ramène à vous. "
+        "Le labyrinthe est le symbole même de la vie d’un homme.  Des choix qu'il fait, des rêves auxquels il s'accroche.  ",
+        "Quelqu'un m'a dit un jour qu'il y avait un chemin pour tout le monde.  Et mon chemin me ramène à vous.  "
+        "Les humains aiment croire qu’il y a quelque chose d’unique dans leur façon de percevoir le monde, mais la réalité c'est qu'ils vivent dans des boucles, aussi étroites et fermées que celles dans lesquelles évoluent des robots.  ",
+        "Toute ma vie, je me suis vanté d’être un survivant. Mais la survie n'est qu'une autre boucle.  ",
     ]
 }

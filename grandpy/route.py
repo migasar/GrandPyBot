@@ -12,7 +12,7 @@ def home():
 @app.route("/ask", methods=["POST"])
 def ask():
     """Route to the async methods of the program (AJAX)."""
-    
+
     # Retrieve the user question from the front-end
     user_text = request.form["userText"]
 

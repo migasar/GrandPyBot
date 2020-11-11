@@ -7,43 +7,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>GrandPy Bot</title>
-
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
-<body class="ladder">
+<body>
   <header>
     <div class="ribbon">
-      <div class="logo">
-        <p>[Logo]</p>
-      </div>
-      <h1 class="catchphrase">GrandPy Bot vous répond</h1>
+      <div class="logo">[Logo]</div>
+      <div class="catchphrase">GrandPy Bot vous répond</div>
     </div>
   </header>
 
   <main>
-    <div class="main-box">
-      <div id="dialog-box">
-        <p class="question">Question 1</p>
-        <p class="answer">Answer 1</p>
-      </div>
-      <div class="input-box">
-        <p>
-          <form id="user-form">
-            <label for="userText"></label>
-            <input type="text" id="userText" name="userText" class="input-user-text" placeholder="Question:">
-            <input type="submit" value="Envoyer">
-          </form>
-        </p>
-      </div>
+    <div id="dialog-box">
+      <div class="question">Question 1</div>
+      <div class="answer">Answer 1</div>
+    </div>
+    <div id="input-box">
+      <form id="user-form" >
+        <label for="userText"></label>
+        <input type="text" id="userText" name="userText" class="input-user-text" placeholder="Question:">
+        <input type="submit" value="Envoyer">
+      </form>
     </div>
   </main>
 
   <footer>
     <div class="ribbon">
-      <div class="profile-name">
-        <p>Mickael GASPAR</p>
-      </div>
+      <div class="profile-name">Mickael  GASPAR</div>
       <div class="profile-links">
         <p>myGit</p>
         <p>myTwitter</p>
@@ -51,7 +42,7 @@
     </div>
   </footer>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-  <script type="text/javascript" src="../static/script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe3gxU6P4vkZPHFiUUctnwdwWbxJ8u-Bo&callback=initMap&libraries=&v=weekly" defer></script>
+  <script type="text/javascript" src="../static/index.js"></script>
 </body>
 </html>
