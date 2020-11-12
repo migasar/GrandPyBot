@@ -1,8 +1,7 @@
 """Handle the interactions with the web services used by the program."""
 
+import os
 import requests
-
-from app.static.constant import GOOGLE_API_KEY
 
 
 class APIgmap:
@@ -11,7 +10,7 @@ class APIgmap:
     """
 
     def __init__(self):
-        self.api_key = GOOGLE_API_KEY
+        self.api_key = os.environ.get('GOOGLE_API_KEY')
         self.base_url = "https://maps.googleapis.com/maps/api/geocode/json?"
 
 
