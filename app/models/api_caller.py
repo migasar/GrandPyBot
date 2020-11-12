@@ -10,7 +10,7 @@ class APIgmap:
     """
 
     def __init__(self):
-        self.api_key = os.environ.get('GOOGLE_API_KEY')
+        self.key_back = os.environ.get('GOOGLE_API_KEY_BACK')
         self.base_url = "https://maps.googleapis.com/maps/api/geocode/json?"
 
 
@@ -39,7 +39,7 @@ class APIgmap:
 
         else:
             # Build the request to the API
-            params_url = f"address={formated_input}&types=geocode&key={self.api_key}"
+            params_url = f"address={formated_input}&types=geocode&key={self.key_back}"
             endpoint = self.base_url + params_url
 
             # Call the API

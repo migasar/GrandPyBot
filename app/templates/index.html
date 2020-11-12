@@ -7,14 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>GrandPy Bot</title>
+
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <script src="https://kit.fontawesome.com/8f873755fa.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
     <div class="ribbon">
-      <img class="avatar" src="{{url_for('static', filename='westworld_ford_image_64.png')}}" alt="[Image of Ford]" />
+      <img class="avatar" src="{{url_for('static', filename='westworld_ford_image_64.png')}}" alt="[Image of Ford]" >
       <div class="catchphrase">GrandPy Bot vous répond</div>
     </div>
   </header>
@@ -37,13 +39,18 @@
     <div class="ribbon">
       <div class="profile-name">Mickael  GASPAR</div>
       <div class="profile-links">
+        <i class="far fa-circle fa-2x"></i>
+        <span class="fa-stack fa-2x">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fab fa-twitter fa-stack-1x fa-inverse" style="color:black"></i>
+        </span>
         <p>myGit</p>
         <p>myTwitter</p>
       </div>
     </div>
   </footer>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe3gxU6P4vkZPHFiUUctnwdwWbxJ8u-Bo&initMap"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{key_front}}&initMap"></script>
   <script type="text/javascript" src="../static/index.js"></script>
 </body>
 </html>

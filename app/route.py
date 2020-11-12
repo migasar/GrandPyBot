@@ -1,3 +1,4 @@
+import os
 from flask import render_template, jsonify, request
 
 from app import app
@@ -6,7 +7,7 @@ from app.models import query_parser
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", key_front=os.getenv('GOOGLE_API_KEY_FRONT'))
 
 
 @app.route("/ask", methods=["POST"])
