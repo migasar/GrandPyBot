@@ -27,8 +27,8 @@ body > * {
   align-items: center;
 }
 .avatar {
-  width: 50;
-  height: 50;
+  width: 64;
+  height: 64;
   margin: 0.5rem 2rem;
   flex: 0 4 auto;
 }
