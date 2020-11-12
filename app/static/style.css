@@ -26,8 +26,10 @@ body > * {
   justify-content: space-between;
   align-items: center;
 }
-.logo {
-  margin: 1rem 2rem;
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem 2rem;
   flex: 0 4 auto;
 }
 .catchphrase {
@@ -103,52 +105,3 @@ main {
 .input-user-text:hover {
   box-shadow: 0px 4px 8px black;
 }
-
-
-/*
-body > * {
-  width: 100%;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-*/
-/*
-.ladder {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.ladder > * {
-  padding: 0.1rem;
-  flex: 1 1 auto;
-}
-*/
-/*
-header {
-  background-color: #1e2934;
-}
-*/
-/*
-footer {
-  background-color: #1e2934;
-}
-*/
-/*
-.main-box {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  align-items: stretch;
-  flex: 8 2 auto;
-}
-*/
-/*
-#dialog-box > * {
-  width: 60%;
-}
-*/
