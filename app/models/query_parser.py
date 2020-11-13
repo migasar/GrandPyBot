@@ -16,7 +16,6 @@ class QuestionParser:
     def __init__(self):
         self.stopwords = [self.flatten_text(word) for word in STOPWORD]
 
-
     def flatten_text(self, wording):
         """Normalize the characters of a text,
         by ensuring that the whole string is in lowercase,
@@ -31,7 +30,6 @@ class QuestionParser:
         wording = unidecode(wording)
 
         return wording
-
 
     def segment_text(self, wording):
         """Try to extract the significative words of the question from the text,
@@ -56,7 +54,6 @@ class QuestionParser:
         if match is None:
             return wording
 
-
     def remove_punctuation(self, wording):
         """Remove every punctuation from the text."""
 
@@ -71,7 +68,6 @@ class QuestionParser:
 
         return wording
 
-
     def filter_text(self, wording):
         """Remove stopwords from the text."""
 
@@ -82,7 +78,6 @@ class QuestionParser:
             pass
 
         return wording
-
 
     def parsing_flow(self, text):
         """Apply all the functions of the parser to the string, in a staged process.
@@ -116,7 +111,6 @@ class AnswerBuilder:
         self.api_gmap = APIgmap()
         self.api_wiki = APIwiki()
 
-
     def spot_response(self, query):
         """Chain the calls to the API of Gmap and Wikipedia,
         to get all the geospatial elements of the bot response.
@@ -139,7 +133,6 @@ class AnswerBuilder:
         # we append in a dictionary all the elements found with the API calls
         return self.stack_response(spotted=True, extract=wiki_extract, location=gmap_spot)
 
-
     def stack_response(self, spotted=False, extract=None, location=None):
         """Pile all the informations retrieved from the queries in a single object."""
 
@@ -155,12 +148,16 @@ class AnswerBuilder:
 
         # if none of the attributes is false or empty
         if spotted is True:
-            response_elements['context'] = random.choice(self.botquotes['success'])
+            response_elements['context'] = random.choice(
+                self.botquotes['success']
+            )
             response_elements['address'] = location['address']
             response_elements['latitude'] = location['latitude']
             response_elements['longitude'] = location['longitude']
 
         else:
-            response_elements['context'] = random.choice(self.botquotes['failure'])
+            response_elements['context'] = random.choice(
+                self.botquotes['failure']
+            )
 
         return response_elements
