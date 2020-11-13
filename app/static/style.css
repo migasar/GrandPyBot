@@ -11,7 +11,7 @@ body {
 
   font-family: "Georgia", sans-serif;
   font-size: 1.1rem;
-  color: #f0f5f8;
+  color: aliceblue;
   background-color: #1e2934;
 }
 
@@ -72,7 +72,7 @@ body > * {
 .fab {
   vertical-align: baseline;
 
-  color: #f0f5f8;
+  color: aliceblue;
 }
 
 main {
@@ -136,7 +136,7 @@ main {
   font-size: 1.2rem;
   font-weight: bold;
   color: #093048;
-  background-color: #f0f5f8;
+  background-color: aliceblue;
 }
 
 .input-user-text:focus,
