@@ -19,6 +19,7 @@
       <div class="avatar">
         <img  src="{{url_for('static', filename='westworld_ford_image_64.png')}}" alt="[Image of Ford]" />
       </div>
+
       <div class="catchphrase">GrandPy Bot vous répond</div>
     </div>
   </header>
@@ -28,6 +29,7 @@
       <div class="question">Question 1</div>
       <div class="answer">Answer 1</div>
     </div>
+
     <div id="input-box">
       <form id="user-form" >
         <label for="userText"></label>
@@ -40,24 +42,27 @@
   <footer>
     <div class="ribbon">
       <div class="profile-name">Mickael  GASPAR</div>
+
       <div class="profile-links">
         <a class="fa-stack" href="https://twitter.com/migatsar">
-          <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="fab fa-twitter fa-stack-1x fa-inverse" style="color:black"></i>
+          <span class="fas fa-circle fa-stack-2x"></span> 
+          <span class="fab fa-twitter fa-stack-1x fa-inverse" style="color:black"></span> 
         </a>
         <a class="fa-stack" href="https://github.com/migasar">
-          <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="fab fa-github fa-stack-1x fa-inverse" style="color:black"></i>
+          <span class="fas fa-circle fa-stack-2x"></span> 
+          <span class="fab fa-github fa-stack-1x fa-inverse" style="color:black"></span> 
         </a>
         <a class="fa-stack" href="https://medium.com/@Migasar">
-          <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="fab fa-medium fa-stack-1x fa-inverse" style="color:black"></i>
+          <span class="fas fa-circle fa-stack-2x"></span> 
+          <span class="fab fa-medium fa-stack-1x fa-inverse" style="color:black"></span> 
         </a>
       </div>
     </div>
   </footer>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key={{key_front}}&initMap"></script>
+  <script defer 
+    src="https://maps.googleapis.com/maps/api/js?key={{key_front}}&initMap">
+  </script>
   <script type="text/javascript" src="../static/index.js"></script>
 </body>
 </html>

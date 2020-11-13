@@ -27,12 +27,14 @@ function addMapElt(answerMap) {
 
 
 function initMap(placeLatitude, placeLongitude, id) {
-    /* Initialize and add the map */
+    // Initialize and add the map
 
     // Define the location by its coordinates
     let place = { lat: placeLatitude, lng: placeLongitude };
+
     // Initialized the map, centered on the location
     let map = new google.maps.Map(document.getElementById(id), { zoom: 15, center: place });
+    
     // Add a marker to the map, positioned at the location
     let marker = new google.maps.Marker({ position: place, map: map });
 }
