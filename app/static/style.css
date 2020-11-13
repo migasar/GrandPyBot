@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   background-color: #1e2934;
   color: #f0f5f8;
   font-family: "Georgia", "Courier New", sans-serif;
@@ -13,7 +14,8 @@ html, body {
   flex-direction: column;
   justify-content: space-between;
 }
-body > * {
+
+body>* {
   padding: 0.1rem;
   flex: 1 1 auto;
 }
@@ -22,32 +24,49 @@ body > * {
   height: 10%;
   margin: auto;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
 }
+
 .avatar {
   width: 4rem;
   height: 4rem;
-  margin: 0.5rem 2rem 0rem 1rem;
+  margin: 0.5rem 2rem;
   flex: 0 4 auto;
 }
+
 .catchphrase {
   font-size: 2em;
   font-style: oblique;
   text-align: center;
-  margin: auto;;
+  margin: auto;
   flex: 4 1 auto;
 }
+
 .profile-name {
-  margin-left: 2rem;
+  margin: 1rem 2rem;
   text-align: left;
 }
+
 .profile-links {
-  margin: 2rem;
-  flex-flow: row wrap;
+  margin: 1rem 4rem;
   text-align: right;
 }
+
+.fa-stack {
+  font-size: 1.2em;
+}
+.fa-stack:hover {
+  box-shadow: 1px 2px 1px 2px black;
+}
+i.fas, i.fab {
+  vertical-align: baseline;
+  color: #f0f5f8;
+}
+
+
+
 
 main {
   background-color: #093048;
@@ -67,17 +86,20 @@ main {
   margin: 1rem;
   flex: 2;
 }
+
 .question {
   font-family: "Courier New", serif;
   margin-left: 1rem;
   text-align: left;
 }
+
 .answer {
   color: #dbbc57;
   font-style: oblique;
   margin-right: 1rem;
   text-align: right;
 }
+
 #map {
   height: 40%;
   width: 30%;
@@ -91,6 +113,7 @@ main {
   flex-flow: column nowrap;
   justify-content: center;
 }
+
 .input-user-text {
   width: 80%;
   border-radius: 3px;
@@ -102,6 +125,7 @@ main {
   text-align: justify;
   padding: 0.5rem;
 }
+
 .input-user-text:focus,
 .input-user-text:hover {
   box-shadow: 0px 4px 8px black;

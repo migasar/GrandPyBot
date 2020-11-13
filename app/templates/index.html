@@ -16,7 +16,9 @@
 <body>
   <header>
     <div class="ribbon">
-      <img class="avatar" src="{{url_for('static', filename='westworld_ford_image_64.png')}}" alt="[Image of Ford]" >
+      <div class="avatar">
+        <img  src="{{url_for('static', filename='westworld_ford_image_64.png')}}" alt="[Image of Ford]" />
+      </div>
       <div class="catchphrase">GrandPy Bot vous répond</div>
     </div>
   </header>
@@ -39,13 +41,18 @@
     <div class="ribbon">
       <div class="profile-name">Mickael  GASPAR</div>
       <div class="profile-links">
-        <i class="far fa-circle fa-2x"></i>
-        <span class="fa-stack fa-2x">
+        <a class="fa-stack" href="https://twitter.com/migatsar">
           <i class="fas fa-circle fa-stack-2x"></i>
           <i class="fab fa-twitter fa-stack-1x fa-inverse" style="color:black"></i>
-        </span>
-        <p>myGit</p>
-        <p>myTwitter</p>
+        </a>
+        <a class="fa-stack" href="https://github.com/migasar">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fab fa-github fa-stack-1x fa-inverse" style="color:black"></i>
+        </a>
+        <a class="fa-stack" href="https://medium.com/@Migasar">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fab fa-medium fa-stack-1x fa-inverse" style="color:black"></i>
+        </a>
       </div>
     </div>
   </footer>
