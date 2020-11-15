@@ -608,7 +608,7 @@ STOPWORD = [
     "été",
     "être",
     "ô"
-]
+    ]
 
 WESTWORLD_QUOTES = {
     'reply' : [
@@ -616,7 +616,7 @@ WESTWORLD_QUOTES = {
         "Tu as des histoires à me raconter l'ami?  ",
         "Si vous ne pouvez pas faire la différence, est-ce important que ce soit réel ou non? ",
         "Avez-vous déjà remis en question la nature de votre réalité? "
-    ],
+        ],
     'success': [
         "Je suppose que les gens aiment lire sur les choses qu'ils veulent le plus et qu'ils expérimentent le moins.  ",
         "J'en ai vu des choses dans ma chienne de vie.  ",
@@ -628,7 +628,7 @@ WESTWORLD_QUOTES = {
         "Le problème, mon ami, c'est que ce que vous et moi faisons est si compliqué.  Nous pratiquons la sorcellerie.  Nous énonçons les mots justes.  Ensuite, nous créons la vie elle-même… à partir du chaos.  ",
         "J'ai toujours aimé les bonnes histoires.  Je pense que les histoires nous ennoblissent, qu'elles réoarent ce qui est brisé en nous et nous aident à devenir la personne que nous rêvions d'être.  Des mensonges qui nous en disent plus sur la réalité.  ",
         "Folie du genre humain, il y a toujours un désir d'en savoir plus.  "
-    ],
+        ],
     'failure' : [
         "Le labyrinthe ne t'est pas destiné.  ",
         "Un homme dont on met 10 ans à corriger l'erreur, c'est un sacré mec.  "
@@ -637,5 +637,5 @@ WESTWORLD_QUOTES = {
         "Ça vous ait déjà arrivé d'avoir quelque chose sur le bout de la langue, mais plus vous essayez de vous en souvenir, plus cela vous échappe? ",
         "Quelqu'un m'a dit un jour qu'il y avait un chemin pour tout le monde.  Et mon chemin me ramène à vous.  "
         "Les humains aiment croire qu’il y a quelque chose d’unique dans leur façon de percevoir le monde, mais la réalité c'est qu'ils vivent dans des boucles, aussi étroites et fermées que celles dans lesquelles évoluent des robots.  ",
-    ]
-}
+        ]
+    }

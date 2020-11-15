@@ -11,18 +11,14 @@ class MockResponse:
 
     def __init__(self):
         self.data = {
-
-            # example of Mock syntax
-            'mock_key': 'mock_response',
-
             # results: mock of call to Gmap API
             'results': [{
                 'formatted_address': 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France',
                 'geometry': {'location': {
                     'lat': 48.85837009999999, 
                     'lng': 2.2944813
-                }}
-            }],
+                    }}
+                }],
 
             # query: mock of call to Wiki API
             'query': {
@@ -31,18 +27,18 @@ class MockResponse:
                     'title': 'Tour Eiffel', 
                     'lat': 48.858296, 
                     'lon': 2.294479
-                }],
+                    }],
                 'pages': {'1359783': {
                     'pageid': 1359783, 
                     'title': 'Tour Eiffel', 
                     'extract': 'La tour Eiffel  est une tour de fer puddlé de 324 mètres de hauteur (avec antennes) située à Paris, à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7e arrondissement. Son adresse officielle est 5, avenue Anatole-France.'
-                }}
+                    }}
+                }
             }
-        }
 
 
     def json(self):
-        # mock json() method always returns a specific testing dictionary
+        # Mock json() method always returns a specific testing dictionary
         return self.data
 
 
@@ -52,8 +48,8 @@ def mock_response(monkeypatch):
     It has been moved to a fixture to make it usable with multiple test functions
     """
 
-    # Any arguments may be passed and mock_get() will always return our
-    # mocked object, which only has the .json() method.
+    # Any arguments may be passed and mock_get() will always return 
+    # our mocked object, which only has the .json() method.
     def mock_get(*args, **kwargs):
         return MockResponse()
 
@@ -74,7 +70,7 @@ class TestAPIgmap:
             'address': 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France',
             'latitude': 48.85837009999999,
             'longitude': 2.2944813
-        }
+            }
 
         assert result.get_location('tour eiffel') == expected_result
 
@@ -93,7 +89,7 @@ class TestAPIwiki:
             'address': 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France',
             'latitude': 48.85837009999999,
             'longitude': 2.2944813
-        }
+            }
         
         assert result.get_page_id(pseudo_location) == 1359783
 
@@ -110,6 +106,6 @@ class TestAPIwiki:
             """La tour Eiffel  est une tour de fer puddlé de 324 mètres de hauteur (avec antennes) située à Paris, """
             """à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7e arrondissement. """
             """Son adresse officielle est 5, avenue Anatole-France."""
-        )
+            )
 
         assert result.get_page_text(1359783) == expected_result
