@@ -8,20 +8,12 @@ body {
   background-color: #263238;
 
   color: #EEE;
-  font-family: "Noto Serif", Georgia, serif;
+  font-family: 'Noto Serif', Times, serif;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-/*
-body > * {
-  padding: 0.1rem;
-
-  flex: 1 1 auto;
-}
-*/
 
 .ribbon {
   height: 10%;
@@ -62,11 +54,6 @@ body > * {
 }
 
 /* Social media buttons elements */
-/*
-.fa-stack {
-  font-size: 1.2rem;
-}
-*/
 .fas {
   color: #EEE;
 }
@@ -99,7 +86,7 @@ main {
   margin-left: 1rem;
   text-align: left;
 
-  font-family: "Roboto", "Noto Sans", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 .answer {
   margin-right: 1rem;
@@ -135,7 +122,8 @@ main {
   border-width: thin;
 
   color: #1b2b34;
-  font-family: "Noto Sans", Arial, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
   font-size: 1rem;
 }
 .input-user-text:focus,
