@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
   <title>GrandPy Bot</title>
 
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans|Roboto|Roboto+Slab">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif|Roboto">
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <script src="https://kit.fontawesome.com/8f873755fa.js" crossorigin="anonymous"></script>
 </head>
@@ -31,34 +32,33 @@
 
     <form id="form-container">
       <label for="userText" class="form-item"></label>
-      <input type="text" class="input-box input-text" id="userText" 
-        name="userText" placeholder="Tu as une question ?">
+      <input type="text" class="input-box input-text" id="userText" name="userText" placeholder="Tu as une question ?">
       <input type="submit" class="input-box input-button" value="Envoyer">
     </form>
   </main>
 
   <footer>
-    <div class="profile-name">Mickael  GASPAR</div>
+    <div class="profile-name">Mickael GASPAR</div>
 
     <div class="profile-links">
       <a class="fa-stack" href="https://twitter.com/migatsar">
-        <span class="fas fa-circle fa-stack-2x"></span> 
-        <span class="fab fa-twitter fa-stack-1x"></span> 
+        <span class="fas fa-circle fa-stack-2x"></span>
+        <span class="fab fa-twitter fa-stack-1x"></span>
       </a>
       <a class="fa-stack" href="https://github.com/migasar">
-        <span class="fas fa-circle fa-stack-2x"></span> 
-        <span class="fab fa-github fa-stack-1x"></span> 
+        <span class="fas fa-circle fa-stack-2x"></span>
+        <span class="fab fa-github fa-stack-1x"></span>
       </a>
       <a class="fa-stack" href="https://medium.com/@Migasar">
-        <span class="fas fa-circle fa-stack-2x"></span> 
-        <span class="fab fa-medium fa-stack-1x" ></span> 
+        <span class="fas fa-circle fa-stack-2x"></span>
+        <span class="fab fa-medium fa-stack-1x"></span>
       </a>
     </div>
   </footer>
 
-  <script defer 
-    src="https://maps.googleapis.com/maps/api/js?key={{key_front}}&initMap">
+  <script defer src="https://maps.googleapis.com/maps/api/js?key={{key_front}}&initMap">
   </script>
   <script type="text/javascript" src="../static/index.js"></script>
 </body>
+
 </html>
