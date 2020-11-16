@@ -1,9 +1,10 @@
-let dialogBoxElt = document.querySelector('#dialog-box');
-let userFormElt = document.querySelector('#user-form');
+let dialogBoxElt = document.querySelector('#dialog-container');
+let userFormElt = document.querySelector('#form-container');
 let userTextElt = document.querySelector('#userText');
 
 function addDialogElt(contentElt, classElt) {
   /* Add an element to the dialog segment, on the web page. */
+
   let dialogElt = document.createElement('p');
   dialogElt.className = classElt;
   dialogElt.textContent = contentElt;
@@ -12,6 +13,7 @@ function addDialogElt(contentElt, classElt) {
 
 function addMapElt(answerMap) {
   /* Add a map object to the dialog segment, on the web page. */
+
   let botMap = document.createElement('div');
   botMap.id = 'map';
   botMap.className = 'answer';
@@ -21,12 +23,11 @@ function addMapElt(answerMap) {
 
 function initMap(placeLatitude, placeLongitude, id) {
   /* Initialize a map object. */
+
   // Define the location by its coordinates
   let place = { lat: placeLatitude, lng: placeLongitude };
-
   // Initialize the map, centered on the location
   let map = new google.maps.Map(document.getElementById(id), { zoom: 15, center: place });
-
   // Add a marker to the map, positioned at the location
   let marker = new google.maps.Marker({ position: place, map: map });
 };
@@ -36,6 +37,7 @@ function composeAnswer(answerData) {
    * Agregate the components of the whole reply from the bot, 
    * depending of the result found to the user question. 
    */
+
   if (answerData['spotted'] == true) {
     // Add text
     addDialogElt(answerData['context'], 'answer');
@@ -52,6 +54,7 @@ function composeAnswer(answerData) {
 
 function postFormData(url, data) {
   /* Async function to send the content of the input to the server */
+
   return fetch(url, {method: "POST", body: data})
   .then(response => response.json())
   .catch(error => console.log(error));
@@ -63,7 +66,7 @@ userFormElt.addEventListener('submit', function (event) {
    * search for the elements of a response, and bring them back. 
    */
 
-  // Avoid to refresh the page
+  // Block the refreshment of the page
   event.preventDefault();
 
   // Add the question of the user to the main dialog

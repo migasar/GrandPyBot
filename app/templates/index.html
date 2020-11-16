@@ -9,53 +9,50 @@
   <title>GrandPy Bot</title>
 
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans|Roboto">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Noto+Serif|Noto+Sans|Roboto|Roboto+Slab">
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
   <script src="https://kit.fontawesome.com/8f873755fa.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <header>
-    <div class="ribbon">
-      <img class="avatar" src="{{url_for('static', filename='westworld_ford_image_640.png')}}" alt="[Image of Ford]" />
-     
-      <h1 class="catchphrase">GrandPy Bot vous répond</h1>
-    </div>
+    <img class="logo" src="{{url_for('static', filename='westworld_ford_image_640.png')}}" alt="[Image of Ford]" />
+
+    <span class="catchphrase">GrandPy Bot vous répond</span>
   </header>
 
   <main>
-    <div id="dialog-box">
-      <div class="question">Question 1</div>
-      <div class="answer">Answer 1</div>
+    <div id="dialog-container">
+      <div class="exchange">
+        <div class="question">Question 1</div>
+        <div class="answer">Answer 1</div>
+      </div>
     </div>
 
-    <div id="input-box">
-      <form id="user-form" >
-        <label for="userText"></label>
-        <input type="text" id="userText" name="userText" class="input-user-text" placeholder="Tu as une question ?">
-        <input type="submit" value="Envoyer">
-      </form>
-    </div>
+    <form id="form-container">
+      <label for="userText" class="form-item"></label>
+      <input type="text" class="input-box input-text" id="userText" 
+        name="userText" placeholder="Tu as une question ?">
+      <input type="submit" class="input-box input-button" value="Envoyer">
+    </form>
   </main>
 
   <footer>
-    <div class="ribbon">
-      <div class="profile-name">Mickael  GASPAR</div>
+    <div class="profile-name">Mickael  GASPAR</div>
 
-      <div class="profile-links">
-        <a class="fa-stack" href="https://twitter.com/migatsar">
-          <span class="fas fa-circle fa-stack-2x"></span> 
-          <span class="fab fa-twitter fa-stack-1x"></span> 
-        </a>
-        <a class="fa-stack" href="https://github.com/migasar">
-          <span class="fas fa-circle fa-stack-2x"></span> 
-          <span class="fab fa-github fa-stack-1x"></span> 
-        </a>
-        <a class="fa-stack" href="https://medium.com/@Migasar">
-          <span class="fas fa-circle fa-stack-2x"></span> 
-          <span class="fab fa-medium fa-stack-1x" ></span> 
-        </a>
-      </div>
+    <div class="profile-links">
+      <a class="fa-stack" href="https://twitter.com/migatsar">
+        <span class="fas fa-circle fa-stack-2x"></span> 
+        <span class="fab fa-twitter fa-stack-1x"></span> 
+      </a>
+      <a class="fa-stack" href="https://github.com/migasar">
+        <span class="fas fa-circle fa-stack-2x"></span> 
+        <span class="fab fa-github fa-stack-1x"></span> 
+      </a>
+      <a class="fa-stack" href="https://medium.com/@Migasar">
+        <span class="fas fa-circle fa-stack-2x"></span> 
+        <span class="fab fa-medium fa-stack-1x" ></span> 
+      </a>
     </div>
   </footer>
 
