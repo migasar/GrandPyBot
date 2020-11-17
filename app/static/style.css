@@ -2,6 +2,7 @@ html,
 body {
   height: 100vh;
   width: 100%;
+
   margin: 0;
   padding: 0;
 
@@ -11,12 +12,12 @@ body {
   font-style: italic;
 
   display: grid;
-  grid-template-rows: minmax(auto, 1fr) minmax(10vh, 5fr) minmax(auto, 1fr);
+  grid-template-rows: 1fr minmax(10vh, 5fr) 1fr;
 }
 
 header,
 footer {
-  margin: 0 2rem;
+  margin: 0 1rem;
 
   display: grid;
   grid-template-columns: auto 1fr;
@@ -28,12 +29,12 @@ main {
   color: #263238;
 
   display: grid;
-  grid-template-rows: minmax(10vh, 4fr) minmax(auto, 1fr);
-  grid-gap: 10px;
+  grid-template-rows: minmax(10vh, 4fr) 1fr;
   grid-template-areas:
     "dialog"
     "form"
   ;
+  grid-gap: 1px;
 }
 
 /* Header : elements */
@@ -41,7 +42,6 @@ main {
   width: 4rem;
   height: 4rem;
 
-  justify-self: center;
   align-self: end;
 }
 
@@ -54,66 +54,184 @@ main {
 
 /* Main-Dialog : elements */
 #dialog-container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: auto;
+
+  overflow-y: auto;
 
   grid-area: dialog;
-  justify-self: center;
+
+  display: grid;
+  grid-template-areas: "exchange";
+  grid-auto-rows: minmax(min-content, 1fr);
+  grid-gap: 1px;
 }
 
 .exchange {
-  margin: 0 auto;
+  min-width: 90%;
+  height: min-content;
+
+  margin: 1rem auto;
+
+  grid-area: exchange;
+  justify-self: center;
 
   display: grid;
-  grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
-  grid-template-rows:
-    "question"
-    "answer"
+  grid-gap: 1px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "question ."
+    ". answer"
   ;
+  align-items: safe center;
 }
 
 .question {
-  margin-left: 5px;
-  margin-right: 5px;
+  height: min-content;
   text-align: left;
 
   font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
 
   grid-area: question;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  grid-column-start: 1;
+
   display: grid;
   justify-self: start;
 }
-
 .answer {
-  margin-left: 5px;
-  margin-right: 5px;
+  height: min-content;
   text-align: right;
 
   grid-area: answer;
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
+  grid-column-end: -1;
+
   display: grid;
   justify-self: end;
 }
-
 .map {
-  height: 40%;
-  width: 20%;
+  max-height: 100%;
+  max-width: 100%;
 }
+
+.answer {
+  margin-bottom: 1em;
+  border: 1px solid #444;
+  padding: 10px;
+}
+.answer {
+  display: grid;
+  grid-column-gap: 1px;
+  grid-template-areas:
+    "result"
+    "map"
+    "extract"
+    "reply";
+}
+.answer>.result {
+  grid-area: result;
+}
+.answer>.map {
+  grid-area: map;
+}
+.answer>.extract {
+  grid-area: extract;
+}
+.answer>.reply {
+  grid-area: reply;
+}
+@media (min-width: 600px) {
+  /* clearfix*/
+  .answer:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .answer .map {
+    float: left;
+    margin: 0 10px 0 0;
+    width: 150px;
+  }
+  .answer .reply {
+    padding: 10px;
+  }
+  .answer>* {
+    margin: 0 0 0 160px;
+  }
+  .answer>.answer {
+    margin-left: 160px;
+    clear: both;
+  }
+}
+
+
+/* 
+.media {
+  margin-bottom: 1em;
+  border: 1px solid #444;
+  padding: 10px;
+}
+.media {
+  display: grid;
+  grid-column-gap: 1px;
+  grid-template-areas:
+    "result"
+    "map"
+    "extract"
+    "reply";
+}
+.media>.result {
+  grid-area: result;
+}
+.media>.map {
+  grid-area: map;
+}
+.media>.extract {
+  grid-area: extract;
+}
+.media>.reply {
+  grid-area: reply;
+}
+*/
+/* clearfix*/
+/*
+@media (min-width: 600px) { 
+  
+  .media:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .media .map {
+    float: left;
+    margin: 0 10px 0 0;
+    width: 150px;
+  }
+  .media .reply {
+    padding: 10px;
+  }
+  .media>* {
+    margin: 0 0 0 160px;
+  }
+  .media>.media {
+    margin-left: 160px;
+    clear: both;
+  } 
+} 
+*/
+
 
 /* Main-Form : elements */
 form {
-  width: 80%;
-  margin: 1rem auto;
+  min-width: 80%;
+  margin: 1rem;
 
   display: grid;
   grid-template-columns: 1fr max-content;
   grid-column-gap: 1rem;
   justify-self: center;
+  align-self: auto;
 }
 
 .form-item {
