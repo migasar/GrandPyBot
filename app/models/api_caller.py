@@ -106,7 +106,7 @@ class APIwiki:
             "prop": "extracts|info",
             "pageids": f"{page_id}",
             "utf8": 1,
-            "exsentences": "3",
+            "exsentences": "1",
             "explaintext": 1,
             "inprop": "displaytitle|url|subjectid"
             }
@@ -116,7 +116,4 @@ class APIwiki:
         results = response.json()['query']['pages'][f'{page_id}']
 
         # Get the text of the page from the response
-        extract = results['extract']
-
-        # Fetch the first paragraph from the text of the page
-        return extract.splitlines()[0]
+        return results['extract']

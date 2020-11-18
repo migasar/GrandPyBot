@@ -154,8 +154,8 @@ class AnswerBuilder:
         # Create a dictionary with certain elements, if a location was found
         if spotted is True:
             response_elements = {
-                'context': random.choice(self.botquotes['success']),
                 'reply': random.choice(self.botquotes['reply']),
+                'context': random.choice(self.botquotes['success']),
                 'extract': extract,
                 'address': location['address'],
                 'latitude': location['latitude'],
@@ -166,8 +166,8 @@ class AnswerBuilder:
         # Create a dictionary with other elements, otherwise
         else:
             response_elements = {
-                'context': random.choice(self.botquotes['failure']),
                 'reply': random.choice(self.botquotes['reply']),
+                'context': random.choice(self.botquotes['failure']),
                 'extract': extract,
                 'address': None,
                 'latitude': None,
