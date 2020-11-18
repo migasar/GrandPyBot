@@ -19,7 +19,7 @@
   <header>
     <img class="logo" src="{{url_for('static', filename='westworld_ford_image_640.png')}}" alt="[Image of Ford]" />
 
-    <h1 class="catchphrase">GrandPy Bot vous répond</h1>
+    <h1 class="catchphrase"> GrandPy Bot <wbr> vous répond </h1>
   </header>
 
   <main>
@@ -30,14 +30,32 @@
 
     <form id="form-container">
       <label for="userText" class="form-item"></label>
+
       <input type="text" class="input-box input-text" id="userText" name="userText"
         placeholder="Tu cherches ton chemin?">
-      <input type="submit" class="input-box input-button" value="Envoyer">
+
+      <input type="image" class="input-box input-image" alt="Envoyer"
+        src="{{url_for('static', filename='westworld_maze_logo.png')}}">
+
+      <!-- <input type="submit" class="input-box input-button" value="Envoyer"> -->
+
+      <!--
+        <div>
+          <label for="userId">User ID</label>
+          <input type="text" id="userId" name="userId">
+        </div>
+
+        <input type="image" id="image" alt="Login" src="/media/examples/login-button.png">
+
+        <input type="image" id="image" alt="Envoyer" src="{{ url_for('static', filename='westworld_maze_logo.png') }}">
+        
+      -->
+
     </form>
   </main>
 
   <footer>
-    <div class="profile-name">Mickael GASPAR</div>
+    <div class="profile-name"> Mickael <wbr> GASPAR </div>
 
     <div class="profile-links">
       <a class="fa-stack" href="https://twitter.com/migatsar">

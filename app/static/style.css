@@ -1,3 +1,5 @@
+/* first level sections */
+
 html,
 body {
   height: 100vh;
@@ -10,7 +12,7 @@ body {
   font-style: italic;
 
   display: grid;
-  grid-template-rows: 1fr minmax(10vh, 8fr) 1fr;
+  grid-template-rows: 1fr minmax(10vh, 6fr) 1fr;
 }
 
 header,
@@ -35,8 +37,7 @@ main {
   row-gap: 0.1rem;
 }
 
-
-/* Header elements */
+/* header items */
 
 .logo {
   width: 5rem;
@@ -52,8 +53,7 @@ main {
   justify-self: center;
 }
 
-
-/* Dialog elements */
+/* dialog items */
 
 #dialog-container {
   width: 90%;
@@ -70,7 +70,7 @@ main {
 
 .question,
 .answer {
-  max-width: 60%;
+  max-width: 65%;
   height: min-content;
   margin: 0.5rem;
   padding: 0.5rem;
@@ -176,16 +176,17 @@ main {
   }
 }
 
-
-/* Main-Form elements */
+/* form items */
 
 form {
   min-width: 80%;
   margin: auto;
 
+  border-radius: 50px 50px 50px 1px;
+  border-bottom: 2px solid #1b2b34;
+
   display: grid;
   grid-template-columns: 1fr min-content;
-  column-gap: 1rem;
   justify-self: center;
   align-self: auto;
 }
@@ -194,38 +195,39 @@ form {
   grid-column: span 2;
 }
 
-
-/* Form-Inputs */
-
 .input-box {
   text-align: justify;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 1.1rem;
 
-  border: 2px solid #1b2b34;
-  border-radius: 4px;
-}
-
-.input-box:focus,
-.input-box:hover {
-  box-shadow: 2px 4px 8px #1b2b34;
+  border: none;
 }
 
 .input-text {
-  margin: auto 0;
-  padding: 0.8rem 1rem;
+  padding: 0.5rem;
   background-color: #eee;
   color: #1b2b34;
 }
 
-.input-button {
-  background-color: #1b2b34;
-  color: #eee;
+.input-image {
+  height: max-content;
+  width: 4rem;
+
+  border-radius: 0px 50px 50px 0px;
 }
 
+form:hover,
+.input-image:hover {
+  box-shadow: 5px 5px 5px #1b2b34;
+}
 
-/* Footer elements */
+/* .input-button {
+  background-color: #1b2b34;
+  color: #eee;
+} */
+
+/* footer items */
 
 .profile-name {
   text-align: center;
@@ -236,8 +238,7 @@ form {
   text-align: right;
 }
 
-
-/* Footer-Links */
+/* footer-links items */
 
 .fas {
   color: #eee;
