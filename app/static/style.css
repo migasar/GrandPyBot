@@ -234,12 +234,14 @@ form:hover {
   margin: 0.1rem;
   background: transparent;
   border: transparent;
-}
 
-.activate {
   animation-name: rotator;
-  animation-iteration-count: 2;
-  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+
+  /* NOT WORKING */
+  /* animation-play-state: paused;  */
+
   animation-timing-function: linear;
   position: relative;
 }
@@ -248,11 +250,11 @@ form:hover {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-
 
 /* footer items */
 
