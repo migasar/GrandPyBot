@@ -10,7 +10,6 @@ body {
   color: #eee;
   font-family: "Noto Serif", Times, serif;
   font-style: italic;
-
   display: grid;
   grid-template-rows: 1fr minmax(10vh, 6fr) 1fr;
 }
@@ -18,7 +17,6 @@ body {
 header,
 footer {
   margin: 0 1rem;
-
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
@@ -27,7 +25,6 @@ footer {
 main {
   background-color: #eee;
   color: #263238;
-
   display: grid;
   grid-template-rows: minmax(10vh, 4fr) 1fr;
   grid-template-areas:
@@ -38,32 +35,25 @@ main {
 }
 
 /* header items */
-
 .logo {
   width: 5rem;
   height: 5rem;
   margin-left: 1rem;
-
   align-self: end;
 }
-
 .catchphrase {
   margin: auto 1rem;
-
   justify-self: center;
 }
 
 /* dialog items */
-
 #dialog-container {
   width: 90%;
   margin: 1rem auto;
   padding: 1rem;
   overflow-y: auto;
-
   justify-self: center;
   grid-area: dialog;
-
   display: flex;
   flex-direction: column;
 }
@@ -77,16 +67,12 @@ main {
   text-align: justify;
   font-style: normal;
 }
-
 .question {
   font-family: "Roboto", Arial, sans-serif;
-
   align-self: flex-start;
 }
-
 .answer {
   align-self: flex-end;
-
   display: grid;
   column-gap: 10px;
   row-gap: 2px;
@@ -103,51 +89,40 @@ main {
 .answer>* {
   padding: 0.2rem;
 }
-
 .answer .result {
   font-weight: bold;
-
   grid-area: result;
 }
-
 .answer .address {
   background-color: #1b2b34;
   color: #eee;
   font-weight: bold;
-
   grid-area: address;
 }
-
 .answer .extract {
   grid-area: extract;
 }
-
 .answer .context {
   font-style: italic;
-
   grid-area: context;
 }
-
 .answer .map {
   max-width: 100%;
   min-height: 200px;
   margin: 0.5rem;
-
   grid-area: map;
 }
 
 @media screen and (max-width: 500px) {
-
+  /* resizing of the dialog section on smaller screens */
   .question,
   .answer {
     margin: 0.4rem 0.2rem;
     padding: 0.2rem 0.4rem;
   }
-
   .answer {
     border: 2px solid #1b2b34;
     border-radius: 4px;
-
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: minmax(0, 1fr);
@@ -160,119 +135,87 @@ main {
     ;
     justify-items: stretch;
   }
-
   .answer .result,
   .answer .address {
     font-weight: bold;
   }
-
   .answer .address {
     background-color: #1b2b34;
     color: #eee;
   }
-
   .answer .context {
     font-style: italic;
   }
 }
 
 /* form items */
-
 form {
   min-width: 80%;
   margin: auto;
-
   border-radius: 50px 50px 50px 1px;
   border-bottom: 2px solid #1b2b34;
-
   display: grid;
   grid-template-columns: 1fr min-content;
   justify-self: center;
   align-self: auto;
 }
-
-.form-item {
-  grid-column: span 2;
-}
-
-.input-box {
-  text-align: justify;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  font-size: 1rem;
-
-  border: none;
-}
-
-.input-text {
-  padding: 0.5rem;
-  background-color: #eee;
-  color: #1b2b34;
-}
-
-.input-text {
-  padding: 0.5rem;
-  background-color: #eee;
-  color: #1b2b34;
-}
-
-.input-image {
-  height: 5rem;
-  width: 4rem;
-
-  border-radius: 0px 50px 50px 0px;
-  border-radius: 50%;
-}
-
 form:hover {
   box-shadow: 5px 5px 5px #1b2b34;
 }
 
+.form-item {
+  grid-column: span 2;
+}
+.input-box {
+  text-align: justify;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+}
+.input-text {
+  padding: 0.5rem;
+  background-color: #eee;
+  color: #1b2b34;
+}
+.input-image {
+  height: 5rem;
+  width: 4rem;
+  border-radius: 0px 50px 50px 0px;
+  border-radius: 50%;
+}
+
 .spinning {
+  /* animation effect applied dynamically to input-image */
   height: 5rem;
   width: 4rem;
   margin: 0.1rem;
   background: transparent;
   border: transparent;
-
-  animation-name: rotator;
-  animation-iteration-count: infinite;
-  animation-duration: 1.5s;
-
-  /* NOT WORKING */
-  /* animation-play-state: paused;  */
-
-  animation-timing-function: linear;
-  position: relative;
+  animation: rotor 1s ease-in-out infinite alternate; 
 }
-
-@keyframes rotator {
+@keyframes rotor {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
 }
 
 /* footer items */
-
 .profile-name {
   text-align: center;
 }
-
 .profile-links {
   margin: 10px;
   text-align: right;
 }
 
 /* footer-links items */
-
 .fas {
   color: #eee;
 }
-
 .fab {
   color: #263238;
 }

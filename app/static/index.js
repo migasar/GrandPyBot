@@ -1,7 +1,5 @@
 let dialogBox = document.querySelector('#dialog-container');
 let userForm = document.querySelector('#form-container');
-// let userText = document.querySelector('#userText');
-// let inputImage = document.querySelector('#inputImage');
 
 
 function postFormData(url, data) {
@@ -14,12 +12,18 @@ function postFormData(url, data) {
     .catch(error => console.log(error));
 };
 
-
 function resetInputForm(docElt) {
   /* Remove the user request from the input field */
   docElt.reset();
 };
 
+function runLoadAnimation() {
+  // Launch loading animation
+  let inputImage = document.querySelector('#inputImage');
+  inputImage.classList.add('spinning');
+  // Stop the animation after a fixed time interval
+  setTimeout(() => inputImage.classList.remove('spinning'), 2000);
+};
 
 function addDialogElt(containerElt, contentElt, classElt) {
   /* Add an element to the dialog segment, on the web page. */
@@ -28,7 +32,6 @@ function addDialogElt(containerElt, contentElt, classElt) {
   dialogElt.textContent = contentElt;
   containerElt.appendChild(dialogElt);
 };
-
 
 function initMap(placeLatitude, placeLongitude, div) {
   /* Initialize a map object. */
@@ -48,7 +51,6 @@ function initMap(placeLatitude, placeLongitude, div) {
     map: map
   });
 };
-
 
 function composeAnswer(answerData) {
   /*  
@@ -87,7 +89,6 @@ function composeAnswer(answerData) {
 
 };
 
-
 userForm.addEventListener('submit', function (event) {
   /* 
    * Catch the content of the form sent by the user,
@@ -98,10 +99,7 @@ userForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
   // Launch loading animation
-  function playFunction() {
-    document.querySelector('.spinning').style.animationPlayState = 'running';
-  };
-  playFunction();
+  runLoadAnimation();
 
   // Add the question of the user to the main dialog
   let userText = document.querySelector('#userText');
@@ -117,9 +115,4 @@ userForm.addEventListener('submit', function (event) {
 
   // Clean the input field after settling the user request
   resetInputForm(userForm);
-
-  function pauseFunction() {
-    document.querySelector('.spinning').style.animationPlayState = 'paused';
-  };
-  pauseFunction();
 });

@@ -18,14 +18,13 @@
 <body>
   <header>
     <img class="logo" src="{{url_for('static', filename='westworld_ford_image.png')}}" alt="[Image of Ford]" />
-
     <h1 class="catchphrase"> GrandPy Bot <wbr> vous répond </h1>
   </header>
 
   <main>
     <div id="dialog-container">
-      <div class="question">Question 1</div>
-      <div class="answer">Answer 1</div>
+      <!-- <div class="question">Question 1</div>
+      <div class="answer">Answer 1</div> -->
     </div>
 
     <form id="form-container">
@@ -34,11 +33,8 @@
       <input type="text" class="input-box input-text" id="userText" name="userText"
         placeholder="Tu cherches ton chemin?">
 
-      <div class="spinning" id="inputImage">
-        <input type="image" class="input-box input-image" alt="Envoyer"
-          src="{{url_for('static', filename='westworld_maze_logo.png')}}">
-      </div>
-
+      <input type="image" class="input-box input-image" id="inputImage" alt="Envoyer"
+        src="{{url_for('static', filename='westworld_maze_logo.png')}}">
     </form>
   </main>
 
