@@ -81,6 +81,10 @@ function composeAnswer(answerData) {
 
   // Append the answer object to the dialog segment on the html
   dialogBox.appendChild(answerContainer);
+
+  // Ensure that the dialog section scrolls from the bottom by default
+  answerContainer.scrollIntoView();
+
 };
 
 
