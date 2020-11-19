@@ -1,6 +1,7 @@
 let dialogBox = document.querySelector('#dialog-container');
 let userForm = document.querySelector('#form-container');
-let userText = document.querySelector('#userText');
+// let userText = document.querySelector('#userText');
+// let inputImage = document.querySelector('#inputImage');
 
 
 function postFormData(url, data) {
@@ -92,7 +93,21 @@ userForm.addEventListener('submit', function (event) {
   // Block the refreshment of the page
   event.preventDefault();
 
+  // Launch loading animation
+  let inputImage = document.querySelector('#inputImage');
+  inputImage.classList.add('spinning');
+
+  function surveyLoading() {
+    if (inputImage.classList.contains('spinning')) {
+      inputImage.classList.add('activate');
+    } else {
+      inputImage.classList.remove('activate');
+    };
+  };
+  setInterval(surveyLoading(), 3000);
+
   // Add the question of the user to the main dialog
+  let userText = document.querySelector('#userText');
   addDialogElt(dialogBox, userText.value, 'question');
 
   // Send the content of the input to the server
@@ -105,4 +120,5 @@ userForm.addEventListener('submit', function (event) {
 
   // Clean the input field after settling the user request
   resetInputForm(userForm);
+  inputImage.classList.remove('spinning');
 });

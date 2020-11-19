@@ -199,7 +199,7 @@ form {
   text-align: justify;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   border: none;
 }
@@ -210,22 +210,49 @@ form {
   color: #1b2b34;
 }
 
+.input-text {
+  padding: 0.5rem;
+  background-color: #eee;
+  color: #1b2b34;
+}
+
 .input-image {
-  height: max-content;
+  height: 5rem;
   width: 4rem;
 
   border-radius: 0px 50px 50px 0px;
+  border-radius: 50%;
 }
 
-form:hover,
-.input-image:hover {
+form:hover {
   box-shadow: 5px 5px 5px #1b2b34;
 }
 
-/* .input-button {
-  background-color: #1b2b34;
-  color: #eee;
-} */
+.spinning {
+  height: 5rem;
+  width: 4rem;
+  margin: 0.1rem;
+  background: transparent;
+  border: transparent;
+}
+
+.activate {
+  animation-name: rotator;
+  animation-iteration-count: 2;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  position: relative;
+}
+
+@keyframes rotator {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* footer items */
 
