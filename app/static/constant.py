@@ -626,7 +626,7 @@ WESTWORLD_QUOTES = {
         "Certaines personnes choisissent de voir la laideur de ce monde.  Le désarroi.  Je choisis d'en voir la beauté. De croire qu'il y a un ordre à nos vies, un but.  ",
         "Tout est magique dans ce monde, excepté le magicien.  ",
         "Le problème, mon ami, c'est que ce que vous et moi faisons est si compliqué.  Nous pratiquons la sorcellerie.  Nous énonçons les mots justes.  Ensuite, nous créons la vie elle-même… à partir du chaos.  ",
-        "J'ai toujours aimé les bonnes histoires.  Je pense que les histoires nous ennoblissent, qu'elles réoarent ce qui est brisé en nous et nous aident à devenir la personne que nous rêvions d'être.  Des mensonges qui nous en disent plus sur la réalité.  ",
+        "J'ai toujours aimé les bonnes histoires.  Je pense que les histoires nous ennoblissent, qu'elles réparent ce qui est brisé en nous et nous aident à devenir la personne que nous rêvions d'être.  Des mensonges qui nous en disent plus sur la réalité.  ",
         "Folie du genre humain, il y a toujours un désir d'en savoir plus.  "
         ],
     'failure' : [
