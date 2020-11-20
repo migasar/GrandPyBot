@@ -173,6 +173,9 @@ form:hover {
   font-size: 1.1rem;
   border: none;
 }
+.input-box:focus {
+  outline: none;
+}
 .input-text {
   padding: 0.5rem;
   background-color: #eee;
