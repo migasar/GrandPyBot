@@ -1,5 +1,4 @@
-/* first level sections */
-
+/* first level containers */
 html,
 body {
   height: 100vh;
@@ -10,6 +9,7 @@ body {
   color: #eee;
   font-family: "Noto Serif", Times, serif;
   font-style: italic;
+  font-size: 1.1rem;
   display: grid;
   grid-template-rows: 1fr minmax(10vh, 6fr) 1fr;
 }
@@ -46,7 +46,7 @@ main {
   justify-self: center;
 }
 
-/* dialog items */
+/* dialog container */
 #dialog-container {
   width: 90%;
   margin: 1rem auto;
@@ -58,6 +58,7 @@ main {
   flex-direction: column;
 }
 
+/* dialog items */
 .question,
 .answer {
   max-width: 65%;
@@ -72,6 +73,7 @@ main {
   align-self: flex-start;
 }
 .answer {
+  font-size: 1rem;
   align-self: flex-end;
   display: grid;
   column-gap: 10px;
@@ -81,30 +83,36 @@ main {
   grid-template-areas:
     "map result"
     "map address"
-    "map extract"
     "map context"
+    "map extract"
   ;
 }
 
+/* dialog-answer items */
 .answer>* {
   padding: 0.2rem;
 }
 .answer .result {
+  font-style: italic;
   font-weight: bold;
   grid-area: result;
+  align-self: center;
 }
 .answer .address {
   background-color: #1b2b34;
   color: #eee;
   font-weight: bold;
   grid-area: address;
-}
-.answer .extract {
-  grid-area: extract;
+  align-self: center;
 }
 .answer .context {
   font-style: italic;
   grid-area: context;
+  align-self: center;
+}
+.answer .extract {
+  grid-area: extract;
+  align-self: center;
 }
 .answer .map {
   max-width: 100%;
@@ -113,42 +121,7 @@ main {
   grid-area: map;
 }
 
-@media screen and (max-width: 500px) {
-  /* resizing of the dialog section on smaller screens */
-  .question,
-  .answer {
-    margin: 0.4rem 0.2rem;
-    padding: 0.2rem 0.4rem;
-  }
-  .answer {
-    border: 2px solid #1b2b34;
-    border-radius: 4px;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: minmax(0, 1fr);
-    grid-template-areas:
-      "result"
-      "address"
-      "extract"
-      "map"
-      "context"
-    ;
-    justify-items: stretch;
-  }
-  .answer .result,
-  .answer .address {
-    font-weight: bold;
-  }
-  .answer .address {
-    background-color: #1b2b34;
-    color: #eee;
-  }
-  .answer .context {
-    font-style: italic;
-  }
-}
-
-/* form items */
+/* form container */
 form {
   min-width: 80%;
   margin: auto;
@@ -163,6 +136,7 @@ form:hover {
   box-shadow: 5px 5px 5px #1b2b34;
 }
 
+/* form items */
 .form-item {
   grid-column: span 2;
 }
@@ -170,32 +144,35 @@ form:hover {
   text-align: justify;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border: none;
 }
 .input-box:focus {
   outline: none;
 }
+
+/* form item: text field */
 .input-text {
   padding: 0.5rem;
   background-color: #eee;
   color: #1b2b34;
 }
+
+/* form item: animated button */
 .input-image {
-  height: 5rem;
-  width: 4rem;
+  height: 60px;
+  width: 57px;
   border-radius: 0px 50px 50px 0px;
   border-radius: 50%;
 }
-
 .spinning {
   /* animation effect applied dynamically to input-image */
-  height: 5rem;
-  width: 4rem;
+  height: 60px;
+  width: 57px;
   margin: 0.1rem;
   background: transparent;
   border: transparent;
-  animation: rotor 1s ease-in-out infinite alternate; 
+  animation: rotor 1s ease-in-out infinite alternate;
 }
 @keyframes rotor {
   from {
@@ -221,4 +198,39 @@ form:hover {
 }
 .fab {
   color: #263238;
+}
+
+/* mobile screen rules */
+@media screen and (max-width: 500px) {
+
+  body {
+    font-size: 1rem;
+  }
+
+  .question,
+  .answer {
+    margin: 0.4rem 0.2rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  /* compact layout of the answer */
+  .answer {
+    border: 2px solid #1b2b34;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-areas:
+      "result"
+      "address"
+      "context"
+      "extract"
+      "map"
+    ;
+    justify-items: stretch;
+  }
+
+  .input-box {
+    font-size: 1rem;
+  }
 }

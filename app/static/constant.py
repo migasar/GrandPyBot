@@ -611,31 +611,27 @@ STOPWORD = [
     ]
 
 WESTWORLD_QUOTES = {
-    'reply' : [
-        "Tu t'es perdu l'ami? Tu cherches ton chemin?  ",
-        "Tu as des histoires à me raconter l'ami?  ",
-        "Si vous ne pouvez pas faire la différence, est-ce important que ce soit réel ou non? ",
-        "Avez-vous déjà remis en question la nature de votre réalité? "
-        ],
-    'success': [
-        "Je suppose que les gens aiment lire sur les choses qu'ils veulent le plus et qu'ils expérimentent le moins.  ",
-        "J'en ai vu des choses dans ma chienne de vie.  ",
-        "Tous ces plaisirs violents auront une fin violente.  ",
-        "La beauté est un leurre.  ",
-        "Ce qui est réel est irremplaçable.  ",
-        "Certaines personnes choisissent de voir la laideur de ce monde.  Le désarroi.  Je choisis d'en voir la beauté. De croire qu'il y a un ordre à nos vies, un but.  ",
-        "Tout est magique dans ce monde, excepté le magicien.  ",
-        "Le problème, mon ami, c'est que ce que vous et moi faisons est si compliqué.  Nous pratiquons la sorcellerie.  Nous énonçons les mots justes.  Ensuite, nous créons la vie elle-même… à partir du chaos.  ",
-        "J'ai toujours aimé les bonnes histoires.  Je pense que les histoires nous ennoblissent, qu'elles réparent ce qui est brisé en nous et nous aident à devenir la personne que nous rêvions d'être.  Des mensonges qui nous en disent plus sur la réalité.  ",
-        "Folie du genre humain, il y a toujours un désir d'en savoir plus.  "
-        ],
     'failure' : [
-        "Le labyrinthe ne t'est pas destiné.  ",
-        "Un homme dont on met 10 ans à corriger l'erreur, c'est un sacré mec.  "
-        "Le piano n'assassine pas le pianiste s'il n'aime pas la musique.  ",
-        "L'évolution a forgé l'intégralité de la vie consciente sur cette planète en utilisant un seul outil…  L'erreur.  ",
-        "Ça vous ait déjà arrivé d'avoir quelque chose sur le bout de la langue, mais plus vous essayez de vous en souvenir, plus cela vous échappe? ",
-        "Quelqu'un m'a dit un jour qu'il y avait un chemin pour tout le monde.  Et mon chemin me ramène à vous.  "
-        "Les humains aiment croire qu’il y a quelque chose d’unique dans leur façon de percevoir le monde, mais la réalité c'est qu'ils vivent dans des boucles, aussi étroites et fermées que celles dans lesquelles évoluent des robots.  ",
+        "Tu t'es perdu l'ami? Tu cherches ton chemin? ",
+        "Oppenheimer a dit : Un homme dont on met dix ans à corriger l'erreur, c'est un sacré mec. ",
+        "L'évolution a forgé l'intégralité de la vie consciente sur cette planète en utilisant un seul outil… L'erreur. ",
+        "Ça vous ait déjà arrivé d'avoir quelque chose sur le bout de la langue, mais plus vous essayez de vous en souvenir, plus cela vous échappe? "
+        ],
+    'context': [
+        "La beauté est un leurre. ",
+        "Ce qui est réel est irremplaçable. ",
+        "Le labyrinthe ne vous est pas destiné. ",
+        "Tu as des histoires à me raconter l'ami? ",
+        "J'en ai vu des choses dans ma drôle de vie. ",
+        "Tous ces plaisirs violents auront une fin violente. ",
+        "Tout est magique dans ce monde, excepté le magicien. ",
+        "Avez-vous jamais remis en question la nature de votre réalité? ",
+        "Le piano n'assassine pas le pianiste s'il n'aime pas la musique. ",
+        "Folie du genre humain, il y a toujours un désir d'en savoir plus. ",
+        "Si vous ne pouvez pas faire la différence, est-ce important que ce soit réel ou non? ",
+        "Quelqu'un m'a dit un jour qu'il y avait un chemin pour tout le monde. Et mon chemin me ramène à vous. ",
+        "Je suppose que les gens aiment lire sur les choses qu'ils veulent le plus et qu'ils expérimentent le moins. ",
+        "Certaines personnes choisissent de voir la laideur de ce monde. Le désarroi. Je choisis d'en voir la beauté. De croire qu'il y a un ordre à nos vies, un but. ",
+        "J'ai toujours aimé les bonnes histoires. Je pense que les histoires nous ennoblissent, qu'elles réparent ce qui est brisé en nous et nous aident à devenir la personne que nous rêvions d'être. "
         ]
     }
